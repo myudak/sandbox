@@ -29,6 +29,13 @@ export interface ModelConfig {
   params: SparParams;
   wind: WindState;
   tmd: TmdDesign | null;
+  /**
+   * Detuning study: scales the platform pitch restoring (e.g. ballast or
+   * marine-growth changes) while the damper keeps its as-built tuning.
+   */
+  pitchStiffnessScale?: number;
+  /** Pitch frequency the damper was tuned to; defaults to this platform's own. */
+  tmdOmegaRef?: number;
 }
 
 export interface LinearModel {
@@ -145,8 +152,10 @@ export function assembleModel(config: ModelConfig, bz?: Float64Array): LinearMod
   const p = config.params;
   const strips = buildStrips(p);
   const base = baselineMatrices(p, strips);
+  const ks = config.pitchStiffnessScale ?? 1;
+  base.K[PITCH][PITCH] *= ks;
   const modes = naturalModes(base.M, base.K, ['surge', 'heave', 'pitch']);
-  const omegaPitchRef = modes.pitch.omega;
+  const omegaPitchRef = config.tmdOmegaRef ?? modes.pitch.omega;
   const withTmd = !!config.tmd && config.tmd.enabled;
   const n = withTmd ? 4 : 3;
   const M = zeros(n);

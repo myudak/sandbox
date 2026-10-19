@@ -31,11 +31,11 @@ export interface TmdDesign {
 export const DEFAULT_TMD: TmdDesign = {
   enabled: true,
   mass: 100_000,
-  arm: -2.5,
+  arm: -5,
   gyration: 1.0,
   pivotZ: 86,
-  freqRatio: 0.93,
-  dampingRatio: 0.15,
+  freqRatio: 1.0,
+  dampingRatio: 0.3,
 };
 
 export interface TmdDerived {

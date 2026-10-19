@@ -81,7 +81,6 @@ export interface FrequencyAnalysis {
   stats: Record<OutputKey, OutputStats>;
   /** Narrow-band 1 Hz damage-equivalent tower-base moment (m = 4) [N·m]. */
   towerDelNarrowBand: number;
-  dragIterations: number;
 }
 
 export interface AnalysisOptions {
@@ -91,6 +90,61 @@ export interface AnalysisOptions {
 
 const DEFAULT_GRID = frequencyGrid();
 
+/** Cached wave kinematics on a frequency grid: wave numbers, strip velocities and drag-free excitation. */
+interface HydroTable {
+  k: Float64Array;
+  /** u[q][i]: horizontal fluid velocity at strip i per unit amplitude. */
+  u: Float64Array[];
+  base: Complex[];
+}
+
+const tables = new WeakMap<number[], Map<object, HydroTable>>();
+
+function hydroTable(model: LinearModel, omegas: number[]): HydroTable {
+  const p = model.config.params;
+  let byParams = tables.get(omegas);
+  if (!byParams) tables.set(omegas, (byParams = new Map()));
+  let tab = byParams.get(p);
+  if (tab) return tab;
+  const zeroDrag = new Float64Array(model.strips.length);
+  const k = new Float64Array(omegas.length);
+  const u: Float64Array[] = [];
+  const base: Complex[] = [];
+  for (let q = 0; q < omegas.length; q++) {
+    const w = omegas[q];
+    k[q] = waveNumber(w, p.waterDepth);
+    u.push(Float64Array.from(model.strips, (s) => fluidVelocity(p, s, w, k[q])));
+    const f = waveExcitation(p, model.strips, zeroDrag, w, k[q]);
+    base.push({ re: f.re.slice(), im: f.im.slice() });
+  }
+  tab = { k, u, base };
+  byParams.set(p, tab);
+  return tab;
+}
+
+/** Wave force at grid point q using the cached table (adds the linearised-drag excitation). */
+function waveForceQ(model: LinearModel, tab: HydroTable, q: number): Complex {
+  let d1 = 0;
+  let d5 = 0;
+  const u = tab.u[q];
+  for (let i = 0; i < model.strips.length; i++) {
+    const s = model.strips[i];
+    const f = model.bz[i] * u[i] * s.dz;
+    d1 += f;
+    d5 += f * s.z;
+  }
+  const b = tab.base[q];
+  const re = new Array<number>(model.n).fill(0);
+  const im = new Array<number>(model.n).fill(0);
+  re[SURGE] = b.re[0] + d1;
+  re[1] = b.re[1];
+  re[PITCH] = b.re[2] + d5;
+  im[SURGE] = b.im[0];
+  im[1] = b.im[1];
+  im[PITCH] = b.im[2];
+  return { re, im };
+}
+
 function relVelocityStd(model: LinearModel, sea: SeaState, omegas: number[]): Float64Array {
   const p = model.config.params;
   const ns = model.strips.length;
@@ -98,19 +152,21 @@ function relVelocityStd(model: LinearModel, sea: SeaState, omegas: number[]): Fl
   const wind = new Float64Array(ns);
   const regular = sea.kind === 'regular';
   const ws = regular ? [(2 * Math.PI) / sea.period] : omegas;
+  const tab = regular ? null : hydroTable(model, omegas);
   const wf = windForce(model);
   for (let q = 0; q < ws.length; q++) {
     const w = ws[q];
-    const k = waveNumber(w, p.waterDepth);
+    const k = tab ? tab.k[q] : waveNumber(w, p.waterDepth);
     const S = regular ? 0.5 * (sea.height / 2) ** 2 : jonswap(w, sea.height, sea.period, sea.gamma);
     const ST = thrustSpectrum(w, model.config.wind, p.rotorDiameter);
-    const Xw = S > 0 ? transfer(model, w, waveForce(model, w, k)) : null;
+    const Xw = S > 1e-12 ? transfer(model, w, tab ? waveForceQ(model, tab, q) : waveForce(model, w, k)) : null;
     const Xt = !regular && ST > 0 ? transfer(model, w, wf) : null;
     for (let i = 0; i < ns; i++) {
       const s = model.strips[i];
       if (Xw) {
         // u_r = û − iω(X1 + z X5)
-        const ur = fluidVelocity(p, s, w, k) + w * (Xw.im[SURGE] + s.z * Xw.im[PITCH]);
+        const uf = tab ? tab.u[q][i] : fluidVelocity(p, s, w, k);
+        const ur = uf + w * (Xw.im[SURGE] + s.z * Xw.im[PITCH]);
         const ui = -w * (Xw.re[SURGE] + s.z * Xw.re[PITCH]);
         const v = (ur * ur + ui * ui) * S;
         wave[i] += regular ? v : v * weight(ws, q);
@@ -154,8 +210,15 @@ export function linearizeDrag(config: ModelConfig, sea: SeaState, iterations = 6
       const target = factor * amp * dragCoefficientPerLength(config.params, model.strips[i]);
       next[i] = it === 0 ? target : 0.5 * (bz[i] + target);
     }
+    let change = 0;
+    let norm = 0;
+    for (let i = 0; i < bz.length; i++) {
+      change = Math.max(change, Math.abs(next[i] - bz[i]));
+      norm = Math.max(norm, Math.abs(next[i]));
+    }
     bz = next;
     model = assembleModel(config, bz);
+    if (it > 0 && change <= 0.01 * norm) break;
   }
   return model;
 }
@@ -187,9 +250,10 @@ export function analyzeModel(model: LinearModel, sea: SeaState, omegas: number[]
     wavePsd[key] = [];
   }
   const wf = windForce(model);
+  const tab = hydroTable(model, omegas);
   for (let q = 0; q < omegas.length; q++) {
     const w = omegas[q];
-    const Xw = model.stable ? transfer(model, w, waveForce(model, w)) : null;
+    const Xw = model.stable ? transfer(model, w, waveForceQ(model, tab, q)) : null;
     const Xt = model.stable && tSpec[q] > 0 ? transfer(model, w, wf) : null;
     for (const key of OUTPUT_KEYS) {
       let a2 = 0;
@@ -250,7 +314,7 @@ export function analyzeModel(model: LinearModel, sea: SeaState, omegas: number[]
   const tm = stats.towerMoment;
   const towerDelNarrowBand = 2 * Math.SQRT2 * tm.sigma * Math.pow(2, 0.25) * Math.pow(tm.nu0, 0.25);
   if (regular) for (const key of OUTPUT_KEYS) psd[key] = wavePsd[key].map((_, i) => windPsd[key][i]);
-  return { model, omegas, waveSpectrum, thrustSpectrum: tSpec, rao, psd, stats, towerDelNarrowBand, dragIterations: 6 };
+  return { model, omegas, waveSpectrum, thrustSpectrum: tSpec, rao, psd, stats, towerDelNarrowBand };
 }
 
 /** Peak of an RAO curve and the frequency it occurs at. */
