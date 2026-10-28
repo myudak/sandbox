@@ -1,0 +1,44 @@
+{
+  "protocol": "512 uniformly spaced validation blocks, token-weighted; same private BPE. EOS body diagnostic. No test metrics used for selection. Random baseline recreated with seed42 on this runtime.",
+  "models": {
+    "random_seed42": {
+      "all_token_nll": 8.331983306301627,
+      "body_token_nll": 8.344324886045154,
+      "eos_prediction_rate_on_body": 0.0,
+      "eos_accuracy": 0.0,
+      "counts": {
+        "all_tokens": 6280,
+        "body_tokens": 5773,
+        "eos_tokens": 507,
+        "predicted_eos_on_body": 0,
+        "correct_eos": 0
+      }
+    },
+    "b1": {
+      "all_token_nll": 6.885503878259355,
+      "body_token_nll": 7.3191831328727215,
+      "eos_prediction_rate_on_body": 0.6305213926901091,
+      "eos_accuracy": 0.9506903353057199,
+      "counts": {
+        "all_tokens": 6280,
+        "body_tokens": 5773,
+        "eos_tokens": 507,
+        "predicted_eos_on_body": 3640,
+        "correct_eos": 482
+      }
+    },
+    "b1-longer": {
+      "all_token_nll": 6.329194135726637,
+      "body_token_nll": 6.751485365010745,
+      "eos_prediction_rate_on_body": 0.5387147063918241,
+      "eos_accuracy": 0.9211045364891519,
+      "counts": {
+        "all_tokens": 6280,
+        "body_tokens": 5773,
+        "eos_tokens": 507,
+        "predicted_eos_on_body": 3110,
+        "correct_eos": 467
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "lm": {
+    "train": {
+      "examples": 128853,
+      "earliest_utc_ms": 1584871678663,
+      "latest_utc_ms": 1708617531601
+    },
+    "validation": {
+      "examples": 22000,
+      "earliest_utc_ms": 1708617557612,
+      "latest_utc_ms": 1758681890762
+    },
+    "test": {
+      "examples": 18474,
+      "earliest_utc_ms": 1758685192594,
+      "latest_utc_ms": 1793125690000
+    }
+  },
+  "sft": {
+    "train": {
+      "examples": 27769,
+      "earliest_utc_ms": 1585039226519,
+      "latest_utc_ms": 1708617514674
+    },
+    "validation": {
+      "examples": 14959,
+      "earliest_utc_ms": 1708617546000,
+      "latest_utc_ms": 1758631444104
+    },
+    "test": {
+      "examples": 8309,
+      "earliest_utc_ms": 1758719750000,
+      "latest_utc_ms": 1793125678000
+    }
+  },
+  "validation": {
+    "source_ids_disjoint_across_splits": true,
+    "chronology_disjoint": true,
+    "exact_examples_disjoint": true,
+    "residual_known_redaction_patterns": 0,
+    "owner_target_role": true,
+    "note": "Pattern scanning is not proof of anonymity; semantic PII and paraphrase leakage remain possible."
+  }
+}

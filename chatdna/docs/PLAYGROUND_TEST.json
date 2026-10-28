@@ -1,0 +1,32 @@
+{
+  "html_status": 200,
+  "available_models": 3,
+  "generation": [
+    {
+      "model": "baseline",
+      "status": 200,
+      "output_tokens": 16,
+      "seconds": 2.419925099995453,
+      "empty": false,
+      "privacy_suppressed": false
+    },
+    {
+      "model": "lora",
+      "status": 200,
+      "output_tokens": 16,
+      "seconds": 1.0450216000317596,
+      "empty": false,
+      "privacy_suppressed": false
+    },
+    {
+      "model": "scratch",
+      "status": 200,
+      "output_tokens": 16,
+      "seconds": 0.11893950001103804,
+      "empty": false,
+      "privacy_suppressed": false
+    }
+  ],
+  "invalid_session_rejected": true,
+  "foreign_origin_rejected": true
+}

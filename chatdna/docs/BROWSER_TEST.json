@@ -1,0 +1,12 @@
+{
+  "utf8_labels_correct": true,
+  "desktop_no_horizontal_overflow": true,
+  "mobile_no_horizontal_overflow": true,
+  "baseline_ui_math_correct": true,
+  "scratch_sentence_mode": true,
+  "scratch_mobile_no_horizontal_overflow": true,
+  "scratch_live_completion_rendered": true,
+  "scratch_text_rendered_safely": true,
+  "scratch_keep_writing_preserves_text": true,
+  "page_errors": 0
+}

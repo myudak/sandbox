@@ -1,0 +1,46 @@
+{
+  "vocab_size": 4096,
+  "block_size": 128,
+  "trained_on": "lm_train only",
+  "splits": {
+    "train": {
+      "documents": 128853,
+      "blocks": 130873,
+      "body_tokens": 1251457,
+      "predicted_tokens_including_eos": 1380310,
+      "length_percentiles": {
+        "50": 5.0,
+        "90": 14.0,
+        "95": 19.0,
+        "99": 108.0
+      },
+      "mean_tokens": 9.712284541298999
+    },
+    "validation": {
+      "documents": 22000,
+      "blocks": 22465,
+      "body_tokens": 272973,
+      "predicted_tokens_including_eos": 294973,
+      "length_percentiles": {
+        "50": 7.0,
+        "90": 18.0,
+        "95": 24.0,
+        "99": 121.0
+      },
+      "mean_tokens": 12.407863636363636
+    },
+    "test": {
+      "documents": 18474,
+      "blocks": 18840,
+      "body_tokens": 241070,
+      "predicted_tokens_including_eos": 259544,
+      "length_percentiles": {
+        "50": 7.0,
+        "90": 20.0,
+        "95": 28.0,
+        "99": 89.0
+      },
+      "mean_tokens": 13.049150156977374
+    }
+  }
+}

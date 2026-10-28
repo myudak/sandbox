@@ -1,0 +1,20 @@
+{
+  "experiment": "B0 synthetic overfit",
+  "parameters": 7656,
+  "seed": 7,
+  "steps": 100,
+  "training_tokens": 400,
+  "initial_loss": 2.6388611793518066,
+  "final_loss": 0.0002517968532629311,
+  "seconds": 0.5294928000075743,
+  "greedy_synthetic_ids": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "device": "cpu",
+  "checkpoint_round_trip": "covered by test_scratch.py",
+  "private_data_used": false
+}

@@ -1,0 +1,9 @@
+{
+  "lora_run": "a1-conservative",
+  "scratch_run": "b1-longer",
+  "default_model": "baseline",
+  "promoted_as_better_than_baseline": false,
+  "lora_reason": "Lower validation repetition (0.037 vs 0.229). General probes did not recover; displayed for experimentation only.",
+  "scratch_reason": "Lower native validation NLL after longer training; generation remains weak.",
+  "selection_inputs": "Validation generation, validation NLL and synthetic probes; no new test scores used to choose variants."
+}

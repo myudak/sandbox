@@ -1,0 +1,1 @@
+{"max_message_chars":2000,"max_turn_messages":8,"session_gap_minutes":30,"repeat_burst_limit":6,"repeat_window_seconds":60,"train_fraction":0.8,"validation_fraction":0.1,"drop_forwarded":true,"reference_date":"2026-10-28"}

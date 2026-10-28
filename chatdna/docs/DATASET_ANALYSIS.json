@@ -1,0 +1,228 @@
+{
+  "owner_clean_message_lengths_bpe_pre_burst": {
+    "count": 254864,
+    "mean": 6.7010052420114254,
+    "percentiles": {
+      "50": 4.0,
+      "90": 9.0,
+      "95": 12.0,
+      "99": 62.0
+    }
+  },
+  "owner_repeated_text_concentration": {
+    "messages": 254864,
+    "unique_exact_normalized_texts": 169297,
+    "top_10_share": 0.02828959758930253,
+    "note": "Only frequency concentration is published, not the repeated words."
+  },
+  "lm_turns": {
+    "train": {
+      "lengths": {
+        "count": 128853,
+        "mean": 9.712284541298999,
+        "percentiles": {
+          "50": 5.0,
+          "90": 14.0,
+          "95": 19.0,
+          "99": 108.0
+        }
+      },
+      "by_year": {
+        "2020": {
+          "documents": 22072,
+          "body_tokens": 160328
+        },
+        "2021": {
+          "documents": 26766,
+          "body_tokens": 370865
+        },
+        "2022": {
+          "documents": 38868,
+          "body_tokens": 344734
+        },
+        "2023": {
+          "documents": 29746,
+          "body_tokens": 277351
+        },
+        "2024": {
+          "documents": 11401,
+          "body_tokens": 98179
+        }
+      },
+      "reserved_body_token_collisions": 0
+    },
+    "validation": {
+      "lengths": {
+        "count": 22000,
+        "mean": 12.407863636363636,
+        "percentiles": {
+          "50": 7.0,
+          "90": 18.0,
+          "95": 24.0,
+          "99": 121.0
+        }
+      },
+      "by_year": {
+        "2024": {
+          "documents": 15706,
+          "body_tokens": 188131
+        },
+        "2025": {
+          "documents": 6294,
+          "body_tokens": 84842
+        }
+      },
+      "reserved_body_token_collisions": 0
+    },
+    "test": {
+      "lengths": {
+        "count": 18474,
+        "mean": 13.049150156977374,
+        "percentiles": {
+          "50": 7.0,
+          "90": 20.0,
+          "95": 28.0,
+          "99": 89.0
+        }
+      },
+      "by_year": {
+        "2025": {
+          "documents": 4330,
+          "body_tokens": 51160
+        },
+        "2026": {
+          "documents": 14144,
+          "body_tokens": 189910
+        }
+      },
+      "reserved_body_token_collisions": 0
+    }
+  },
+  "sft_sequences": {
+    "train": {
+      "sequence_lengths": {
+        "count": 27576,
+        "mean": 47.930156657963444,
+        "percentiles": {
+          "50": 46.0,
+          "90": 77.0,
+          "95": 88.0,
+          "99": 111.0
+        }
+      },
+      "target_lengths": {
+        "count": 27576,
+        "mean": 9.726174934725849,
+        "percentiles": {
+          "50": 8.0,
+          "90": 19.0,
+          "95": 24.0,
+          "99": 37.0
+        }
+      },
+      "total_target_tokens": 268209,
+      "length_rejections": 193,
+      "by_year": {
+        "2020": {
+          "examples": 1301,
+          "target_tokens": 10276,
+          "context_tokens": 50038
+        },
+        "2021": {
+          "examples": 1339,
+          "target_tokens": 11735,
+          "context_tokens": 54144
+        },
+        "2022": {
+          "examples": 3618,
+          "target_tokens": 30200,
+          "context_tokens": 135308
+        },
+        "2023": {
+          "examples": 14676,
+          "target_tokens": 148016,
+          "context_tokens": 571465
+        },
+        "2024": {
+          "examples": 6642,
+          "target_tokens": 67982,
+          "context_tokens": 242558
+        }
+      }
+    },
+    "validation": {
+      "sequence_lengths": {
+        "count": 14844,
+        "mean": 50.038264618701156,
+        "percentiles": {
+          "50": 48.0,
+          "90": 79.0,
+          "95": 90.0,
+          "99": 113.0
+        }
+      },
+      "target_lengths": {
+        "count": 14844,
+        "mean": 9.704998652654272,
+        "percentiles": {
+          "50": 8.0,
+          "90": 19.0,
+          "95": 24.0,
+          "99": 38.0
+        }
+      },
+      "total_target_tokens": 144061,
+      "length_rejections": 115,
+      "by_year": {
+        "2024": {
+          "examples": 12001,
+          "target_tokens": 116667,
+          "context_tokens": 478354
+        },
+        "2025": {
+          "examples": 2843,
+          "target_tokens": 27394,
+          "context_tokens": 120353
+        }
+      }
+    },
+    "test": {
+      "sequence_lengths": {
+        "count": 8184,
+        "mean": 50.53286901270772,
+        "percentiles": {
+          "50": 48.0,
+          "90": 82.0,
+          "95": 94.0,
+          "99": 114.0
+        }
+      },
+      "target_lengths": {
+        "count": 8184,
+        "mean": 10.476906158357771,
+        "percentiles": {
+          "50": 8.0,
+          "90": 21.0,
+          "95": 27.0,
+          "99": 44.0
+        }
+      },
+      "total_target_tokens": 85743,
+      "length_rejections": 125,
+      "by_year": {
+        "2025": {
+          "examples": 2048,
+          "target_tokens": 20718,
+          "context_tokens": 83472
+        },
+        "2026": {
+          "examples": 6136,
+          "target_tokens": 65025,
+          "context_tokens": 244346
+        }
+      }
+    }
+  },
+  "year_basis": "UTC document/response end timestamp; dataset units are different and must not be summed as unique content.",
+  "language_distribution": "Not measured: no validated language/code-switching classifier was used."
+}

@@ -1,0 +1,137 @@
+{
+  "source_rows": 3493665,
+  "input_sha256": "c32d139585ccc111896531c924ad4a9350412f39deece874d1d10afdd049d5f9",
+  "permission": {
+    "participant_context_authorized": true,
+    "owner_confirmation_date": "2026-10-28"
+  },
+  "filters": {
+    "input_rows": 3493665,
+    "invalid_timestamp": 1,
+    "excluded_nontext_or_unknown": 358095,
+    "unresolved_or_invalid_boundary": 9354,
+    "excluded_system": 169311,
+    "timestamp_regressions": 22021,
+    "plain_text_candidates": 2940545,
+    "credential": 299,
+    "email": 965,
+    "url": 32365,
+    "jid": 0,
+    "phone": 6054,
+    "long_number": 63541,
+    "clean_self_messages": 254864,
+    "clean_other_messages": 2658841,
+    "excluded_revoked": 25714,
+    "forwarded_dropped": 18224,
+    "too_long": 1795,
+    "credential_message_dropped": 251,
+    "empty": 6,
+    "media_placeholder": 1,
+    "pair_ambiguity_dropped": 90351,
+    "burst_repetition_dropped": 2181,
+    "sessions": 326234,
+    "boundary_sessions_purged": 1
+  },
+  "messages_by_year": {
+    "2020": {
+      "self": 26520,
+      "others": 519078
+    },
+    "2021": {
+      "others": 862743,
+      "self": 31325
+    },
+    "2022": {
+      "others": 776863,
+      "self": 48493
+    },
+    "2023": {
+      "others": 217528,
+      "self": 51393
+    },
+    "2024": {
+      "self": 52767,
+      "others": 115706
+    },
+    "2025": {
+      "others": 79150,
+      "self": 18424
+    },
+    "2026": {
+      "others": 87773,
+      "self": 25942
+    }
+  },
+  "split_cutoffs_utc_ms": {
+    "train_end": 1708617531601,
+    "validation_end": 1758683882000
+  },
+  "datasets": {
+    "lm": {
+      "train": {
+        "examples": 128853,
+        "target_characters": 3553931,
+        "sha256": "42d86509fcbf6a3713af202373c8389f8c555d9d8d8bbc9ce7165fd31b2a89e9",
+        "leakage_rejections": {}
+      },
+      "validation": {
+        "examples": 22000,
+        "target_characters": 702494,
+        "sha256": "51ced98c161041357aae87de0064cc0bbbf64e498933ce4f4490362742159bcc",
+        "leakage_rejections": {
+          "exact_cross_split": 5639
+        }
+      },
+      "test": {
+        "examples": 18474,
+        "target_characters": 630111,
+        "sha256": "7a003f5266725d18acae637e596985947325f082b4a3c849c122a2cdf779ecff",
+        "leakage_rejections": {
+          "exact_cross_split": 3624
+        }
+      }
+    },
+    "sft": {
+      "train": {
+        "examples": 27769,
+        "target_characters": 661329,
+        "sha256": "61306060470cd0e1eaa45383ecb30d40df6c3ec129478e9dc2740df1527368ba",
+        "leakage_rejections": {}
+      },
+      "validation": {
+        "examples": 14959,
+        "target_characters": 349946,
+        "sha256": "ee35efdebcfa6855074db28100957cf278553f994edf2b8d1da46595a5930834",
+        "leakage_rejections": {
+          "exact_cross_split": 19
+        }
+      },
+      "test": {
+        "examples": 8309,
+        "target_characters": 223717,
+        "sha256": "07eafe89ef6d9ecdd4b0f631047a8c8c43ef5ad339a2e3f684cf7bdf76117fb9",
+        "leakage_rejections": {
+          "exact_cross_split": 14
+        }
+      }
+    }
+  },
+  "split_rule": "Whole sessions ordered chronologically. Boundary-straddling sessions purged. Exact/SimHash-near duplicate held-out documents purged; repeated training phrases retained.",
+  "group_policy": "Quoted-only opt-in; excluded by default.",
+  "limitations": [
+    "Redaction is incomplete; names and sensitive facts may remain. All outputs remain private.",
+    "Language/code-switching proportions are not claimed without a validated language classifier.",
+    "Direct adjacency and quoted linkage are evidence, not proof of semantic relevance."
+  ],
+  "policy": {
+    "max_message_chars": 2000,
+    "max_turn_messages": 8,
+    "session_gap_minutes": 30,
+    "repeat_burst_limit": 6,
+    "repeat_window_seconds": 60,
+    "train_fraction": 0.8,
+    "validation_fraction": 0.1,
+    "drop_forwarded": true,
+    "reference_date": "2026-10-28"
+  }
+}

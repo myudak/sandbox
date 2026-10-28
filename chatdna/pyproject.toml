@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chatdna"
+version = "0.1.0"
+description = "Local experiments in conversational adaptation and language models from random initialization"
+requires-python = ">=3.11,<3.14"
+dependencies = ["torch>=2.7,<3", "transformers>=4.51,<6", "peft>=0.15,<1", "tokenizers>=0.21,<1", "numpy>=2,<3", "matplotlib>=3.9,<4", "safetensors>=0.5", "accelerate>=1,<2", "jinja2>=3.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+acquisition = ["wa-crypt-tools", "tiktoken"]
+browser-test = ["playwright>=1.50,<2"]
+
+[project.scripts]
+chatdna = "chatdna.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+chatdna = ["*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

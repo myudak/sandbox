@@ -1,0 +1,52 @@
+{
+  "protocol": {
+    "generation_context": "Last incoming turn from genuinely held-out direct conversations; not the full multi-turn context. Scratch receives this text as a continuation prefix, so conversation scores are exploratory.",
+    "seed": 42,
+    "samples": 12,
+    "max_new_tokens": 32,
+    "decoding": "greedy",
+    "privacy": "No prompts, targets or generations saved; aggregate overlap and suppression only.",
+    "interpretation": "Character overlap is not a semantic relevance score. Human style/relevance judgement and blinded preference remain unmeasured."
+  },
+  "models": {
+    "baseline": {
+      "available": true,
+      "mean_character_overlap_unsuppressed": 0.15622396172591355,
+      "mean_repeated_trigram_rate_unsuppressed": 0.0,
+      "mean_output_tokens": 30.25,
+      "mean_generation_seconds": 1.8539795583346859,
+      "training_overlap_or_privacy_suppressed": 0,
+      "empty_outputs": 0,
+      "slang_marker_responses_unsuppressed": 0,
+      "synthetic_general_probes_correct": 3,
+      "synthetic_general_probes_total": 3,
+      "subjective_style_and_semantic_relevance": "Not measured; requires human review"
+    },
+    "lora": {
+      "available": true,
+      "mean_character_overlap_unsuppressed": 0.21051281793425536,
+      "mean_repeated_trigram_rate_unsuppressed": 0.47058823529411764,
+      "mean_output_tokens": 21.75,
+      "mean_generation_seconds": 1.572105875001095,
+      "training_overlap_or_privacy_suppressed": 0,
+      "empty_outputs": 0,
+      "slang_marker_responses_unsuppressed": 0,
+      "synthetic_general_probes_correct": 1,
+      "synthetic_general_probes_total": 3,
+      "subjective_style_and_semantic_relevance": "Not measured; requires human review"
+    },
+    "scratch": {
+      "available": true,
+      "mean_character_overlap_unsuppressed": 0.0,
+      "mean_repeated_trigram_rate_unsuppressed": 0.0,
+      "mean_output_tokens": 3.5833333333333335,
+      "mean_generation_seconds": 0.019215375000688557,
+      "training_overlap_or_privacy_suppressed": 0,
+      "empty_outputs": 12,
+      "slang_marker_responses_unsuppressed": 0,
+      "synthetic_general_probes_correct": 0,
+      "synthetic_general_probes_total": 3,
+      "subjective_style_and_semantic_relevance": "Not measured; requires human review"
+    }
+  }
+}

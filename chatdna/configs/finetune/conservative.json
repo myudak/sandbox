@@ -1,0 +1,1 @@
+{"model_id":"Qwen/Qwen3-0.6B","revision":"c1899de289a04d12100db370d81485cdf75e47ca","license":"Apache-2.0","steps":100,"max_length":128,"micro_batch":1,"gradient_accumulation":4,"learning_rate":0.00005,"rank":8,"target_modules":["q_proj","v_proj"],"seed":42,"external_tracking":false}

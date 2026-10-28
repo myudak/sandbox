@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-28",
+  "pytest": {
+    "passed": 24,
+    "skipped": 0,
+    "seconds": 12.61,
+    "actual_local_qwen_tokenizer_used": true
+  },
+  "dependencies": "uv pip check: all 53 installed packages compatible",
+  "distribution": "sdist and wheel built successfully; wheel HTML present and no private data/model artifacts",
+  "evaluation_cli": "one-sample validation comparison completed for all three models; private strings not printed",
+  "http": "see PLAYGROUND_TEST.json",
+  "browser": "see BROWSER_TEST.json",
+  "monorepo_import": {
+    "date": "2026-10-28",
+    "tests_passed": 25,
+    "skipped": 0,
+    "seconds": 23.3,
+    "actual_local_qwen_tokenizer_used": true,
+    "additional_check": "Synthetic fixture staging works with a chatdna/ monorepo prefix."
+  }
+}

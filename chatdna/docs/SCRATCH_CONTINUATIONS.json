@@ -1,0 +1,18 @@
+{
+  "protocol": "Owner-text validation continuations, first two words as prefix; no private strings saved. Not a chatbot relevance test.",
+  "samples": 12,
+  "decoding": {
+    "0": {
+      "nonempty_outputs": 1,
+      "privacy_suppressed": 0,
+      "mean_output_tokens": 3.5833333333333335,
+      "mean_clean_characters": 3.0
+    },
+    "0.8": {
+      "nonempty_outputs": 5,
+      "privacy_suppressed": 0,
+      "mean_output_tokens": 4.583333333333333,
+      "mean_clean_characters": 4.25
+    }
+  }
+}
