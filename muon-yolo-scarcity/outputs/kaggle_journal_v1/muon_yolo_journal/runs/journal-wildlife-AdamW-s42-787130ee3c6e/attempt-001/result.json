@@ -1,0 +1,127 @@
+{
+  "run_id": "journal-wildlife-AdamW-s42-787130ee3c6e",
+  "attempt": 1,
+  "status": "completed",
+  "started_utc": "2026-10-24T23:18:14.724918+00:00",
+  "optimizer": "AdamW",
+  "seed": 42,
+  "data_fraction": 0.2,
+  "noise_probability": 0.0,
+  "realized_noise_rate": 0.0,
+  "variant_fingerprint": "47bb5f0ecab82f4cba3643fb3c77fd477245bf8e9ffa91b278ee0de04d731d90",
+  "train_images": 204,
+  "epochs_budget": 20,
+  "test_evaluated": false,
+  "spec_sha256": "787130ee3c6ecd50ebd5a19d9b3e43fbab743791954eaa2e836552cf598435eb",
+  "actual_train_images": 204,
+  "optimizer_details": {
+    "class": "AdamW",
+    "groups": [
+      {
+        "parameters": 2515728,
+        "lr": 0.001,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.001
+      },
+      {
+        "parameters": 9784,
+        "lr": 0.001,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.001
+      },
+      {
+        "parameters": 9832,
+        "lr": 0.001,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0,
+        "param_group": "bias",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.001
+      }
+    ],
+    "muon_factor": null,
+    "sgd_factor": null
+  },
+  "initial_model_state_sha256": "111da1631eb4bf77119eb03027af923422e35187cf064187db2f22fe8f0409e6",
+  "training_seconds": 313.641670084,
+  "training_peak_vram_bytes": 2939273216,
+  "optimizer_steps": 1280,
+  "epochs_completed": 20,
+  "images_seen": 20480,
+  "sampling": {
+    "mode": "shuffled_cyclic_stream_v1",
+    "samples_per_epoch": 1024,
+    "musgd_head_lr_multiplier": 3.0
+  },
+  "samples_per_epoch": 1024,
+  "exposure_order_sha256": "9dfa8be7cc2e9d860748434c3b10689d5e619da99b9bc2c440dd4d2090918fbc",
+  "best_validation_epoch": 20,
+  "best_validation_map50_95": 0.73351,
+  "best_weights": "/kaggle/working/muon_yolo_journal/runs/journal-wildlife-AdamW-s42-787130ee3c6e/attempt-001/train/weights/best.pt",
+  "best_weights_sha256": "efa197355197eaf792a1f24b165698df943b4531f34a9084a57bd813759d43a6",
+  "validation_seconds": 1.40913713000009,
+  "val_map50_95": 0.7303441685494644,
+  "val_map50": 0.9074423159306348,
+  "val_precision": 0.892949524217813,
+  "val_recall": 0.8342559168250644,
+  "val_per_class_map50_95": [
+    0.7259135140648951,
+    0.6836605102243222,
+    0.7782178645544506,
+    0.7335847853541895
+  ],
+  "lr0": 0.001,
+  "finished_utc": "2026-10-24T23:23:29.942316+00:00",
+  "run_call_seconds": 315.2162486520001,
+  "dataset": "wildlife",
+  "subset_seed": 2026,
+  "corruption_seed": 2027,
+  "hyperparameters": {
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "candidate_id": "a54004a2c417",
+  "roles": [
+    "fixed_exposure_defaults"
+  ],
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "source_fingerprint": "a2268d1ed873b662a32dc1dd134c73f6a70c1b60f1477d18ec82ed33bba8ba99"
+}

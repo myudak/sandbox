@@ -1,0 +1,143 @@
+{
+  "run_id": "journal-voc2007-AdamW-s101-f7f9ad8fc282",
+  "attempt": 1,
+  "status": "completed",
+  "started_utc": "2026-10-25T05:23:24.444248+00:00",
+  "optimizer": "AdamW",
+  "seed": 101,
+  "data_fraction": 1.0,
+  "noise_probability": 0.0,
+  "realized_noise_rate": 0.0,
+  "variant_fingerprint": "8809c5047957f807e84c0682dc8f80fb168b3c0f1b4e7bb45f3a3871f914830e",
+  "train_images": 2501,
+  "epochs_budget": 20,
+  "test_evaluated": false,
+  "spec_sha256": "f7f9ad8fc2827f91ea51c5113cf979a07dc3c4c8049f1de8d65a57d6443dd90f",
+  "actual_train_images": 2501,
+  "optimizer_details": {
+    "class": "AdamW",
+    "groups": [
+      {
+        "parameters": 2523408,
+        "lr": 0.0003,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.0003
+      },
+      {
+        "parameters": 9784,
+        "lr": 0.0003,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.0003
+      },
+      {
+        "parameters": 9928,
+        "lr": 0.0003,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0,
+        "param_group": "bias",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.0003
+      }
+    ],
+    "muon_factor": null,
+    "sgd_factor": null
+  },
+  "initial_model_state_sha256": "0b7b0bb9f204c5b1fe9142a2649054d12a9f670106ac072fc1e44f1a69d0ff7c",
+  "training_seconds": 352.49232199400285,
+  "training_peak_vram_bytes": 3013884416,
+  "optimizer_steps": 1280,
+  "epochs_completed": 20,
+  "images_seen": 20480,
+  "sampling": {
+    "mode": "shuffled_cyclic_stream_v1",
+    "samples_per_epoch": 1024,
+    "musgd_head_lr_multiplier": 3.0
+  },
+  "samples_per_epoch": 1024,
+  "exposure_order_sha256": "d089dd8586dea809d9ad9915b097eda200eabacc8c055cd91222305a85baf8a4",
+  "best_validation_epoch": 19,
+  "best_validation_map50_95": 0.55516,
+  "best_weights": "/kaggle/working/muon_yolo_journal/runs/journal-voc2007-AdamW-s101-f7f9ad8fc282/attempt-001/train/weights/best.pt",
+  "best_weights_sha256": "de12cfa2224291a35c876cedc36edc54f6c366892f6fc3e4c55eb1a0673f9228",
+  "validation_seconds": 2.8327685620024567,
+  "val_map50_95": 0.5528173070993662,
+  "val_map50": 0.7604442925597361,
+  "val_precision": 0.7835880740490099,
+  "val_recall": 0.6923049157144592,
+  "val_per_class_map50_95": [
+    0.6736914905024479,
+    0.46566510468570604,
+    0.45738450741554315,
+    0.5125704255124919,
+    0.41339388339191363,
+    0.7290188367891902,
+    0.5736065885594481,
+    0.6820161748433597,
+    0.3852752846126096,
+    0.5650912245049489,
+    0.43235986315167396,
+    0.6691793149965235,
+    0.6565723319051785,
+    0.694667408092204,
+    0.5466350118319095,
+    0.27194074347740615,
+    0.529904145757351,
+    0.5503915573209955,
+    0.5979308037779056,
+    0.6490514408585162
+  ],
+  "lr0": 0.0003,
+  "finished_utc": "2026-10-25T05:29:19.927793+00:00",
+  "run_call_seconds": 355.4825852190006,
+  "dataset": "voc2007",
+  "subset_seed": 3101,
+  "corruption_seed": 4101,
+  "hyperparameters": {
+    "optimizer": "AdamW",
+    "lr0": 0.0003,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "candidate_id": "eb609f942ee0",
+  "roles": [
+    "voc2007_confirmation_101"
+  ],
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "source_fingerprint": "54f9a72afcc5db8615e63df1096eb12b798b259df6757251c1d8df04d9b2a299"
+}

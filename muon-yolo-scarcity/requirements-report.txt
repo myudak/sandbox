@@ -1,0 +1,3 @@
+-r requirements-dev.txt
+plotly==5.24.1
+ipykernel>=6,<8

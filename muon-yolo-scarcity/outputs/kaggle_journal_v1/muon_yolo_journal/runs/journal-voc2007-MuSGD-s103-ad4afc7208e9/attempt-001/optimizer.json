@@ -1,0 +1,87 @@
+{
+  "class": "MuSGD",
+  "groups": [
+    {
+      "parameters": 0,
+      "lr": 0.009000000000000001,
+      "momentum": 0.9,
+      "nesterov": true,
+      "weight_decay": 0.0005,
+      "param_group": "weight",
+      "use_muon": false,
+      "initial_lr": 0.009000000000000001
+    },
+    {
+      "parameters": 0,
+      "lr": 0.003,
+      "momentum": 0.9,
+      "nesterov": true,
+      "weight_decay": 0.0005,
+      "param_group": "weight",
+      "use_muon": false,
+      "initial_lr": 0.003
+    },
+    {
+      "parameters": 2336,
+      "lr": 0.009000000000000001,
+      "momentum": 0.9,
+      "nesterov": true,
+      "weight_decay": 0.0,
+      "param_group": "bn",
+      "use_muon": false,
+      "initial_lr": 0.009000000000000001
+    },
+    {
+      "parameters": 7448,
+      "lr": 0.003,
+      "momentum": 0.9,
+      "nesterov": true,
+      "weight_decay": 0.0,
+      "param_group": "bn",
+      "use_muon": false,
+      "initial_lr": 0.003
+    },
+    {
+      "parameters": 2456,
+      "lr": 0.009000000000000001,
+      "momentum": 0.9,
+      "nesterov": true,
+      "param_group": "bias",
+      "weight_decay": 0.0,
+      "use_muon": false,
+      "initial_lr": 0.009000000000000001
+    },
+    {
+      "parameters": 7472,
+      "lr": 0.003,
+      "momentum": 0.9,
+      "nesterov": true,
+      "param_group": "bias",
+      "weight_decay": 0.0,
+      "use_muon": false,
+      "initial_lr": 0.003
+    },
+    {
+      "parameters": 132064,
+      "lr": 0.009000000000000001,
+      "momentum": 0.9,
+      "nesterov": true,
+      "weight_decay": 0.0005,
+      "use_muon": true,
+      "param_group": "muon",
+      "initial_lr": 0.009000000000000001
+    },
+    {
+      "parameters": 2391344,
+      "lr": 0.003,
+      "momentum": 0.9,
+      "nesterov": true,
+      "weight_decay": 0.0005,
+      "use_muon": true,
+      "param_group": "muon",
+      "initial_lr": 0.003
+    }
+  ],
+  "muon_factor": 0.2,
+  "sgd_factor": 1.0
+}

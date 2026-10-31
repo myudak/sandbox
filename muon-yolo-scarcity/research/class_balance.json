@@ -1,0 +1,328 @@
+{
+  "source_fingerprint": "b3114f1579a97b5443fe1877fc5b1a293f4f947b86ff0ed0f364a7f1bd037137",
+  "subset_seed": 2026,
+  "corruption_seed": 2027,
+  "rows": [
+    {
+      "split": "train",
+      "fraction": 0.05,
+      "images": 52,
+      "noise_probability": 0,
+      "class": "buffalo",
+      "original_objects": 21,
+      "retained_objects": 21,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 0.05,
+      "images": 52,
+      "noise_probability": 0,
+      "class": "elephant",
+      "original_objects": 39,
+      "retained_objects": 39,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 0.05,
+      "images": 52,
+      "noise_probability": 0,
+      "class": "rhino",
+      "original_objects": 22,
+      "retained_objects": 22,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 0.05,
+      "images": 52,
+      "noise_probability": 0,
+      "class": "zebra",
+      "original_objects": 16,
+      "retained_objects": 16,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 0.05,
+      "images": 52,
+      "noise_probability": 0.2,
+      "class": "buffalo",
+      "original_objects": 21,
+      "retained_objects": 16,
+      "removed_objects": 5
+    },
+    {
+      "split": "train",
+      "fraction": 0.05,
+      "images": 52,
+      "noise_probability": 0.2,
+      "class": "elephant",
+      "original_objects": 39,
+      "retained_objects": 30,
+      "removed_objects": 9
+    },
+    {
+      "split": "train",
+      "fraction": 0.05,
+      "images": 52,
+      "noise_probability": 0.2,
+      "class": "rhino",
+      "original_objects": 22,
+      "retained_objects": 19,
+      "removed_objects": 3
+    },
+    {
+      "split": "train",
+      "fraction": 0.05,
+      "images": 52,
+      "noise_probability": 0.2,
+      "class": "zebra",
+      "original_objects": 16,
+      "retained_objects": 14,
+      "removed_objects": 2
+    },
+    {
+      "split": "train",
+      "fraction": 0.2,
+      "images": 205,
+      "noise_probability": 0,
+      "class": "buffalo",
+      "original_objects": 63,
+      "retained_objects": 63,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 0.2,
+      "images": 205,
+      "noise_probability": 0,
+      "class": "elephant",
+      "original_objects": 129,
+      "retained_objects": 129,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 0.2,
+      "images": 205,
+      "noise_probability": 0,
+      "class": "rhino",
+      "original_objects": 74,
+      "retained_objects": 74,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 0.2,
+      "images": 205,
+      "noise_probability": 0,
+      "class": "zebra",
+      "original_objects": 119,
+      "retained_objects": 119,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 0.2,
+      "images": 205,
+      "noise_probability": 0.2,
+      "class": "buffalo",
+      "original_objects": 63,
+      "retained_objects": 47,
+      "removed_objects": 16
+    },
+    {
+      "split": "train",
+      "fraction": 0.2,
+      "images": 205,
+      "noise_probability": 0.2,
+      "class": "elephant",
+      "original_objects": 129,
+      "retained_objects": 102,
+      "removed_objects": 27
+    },
+    {
+      "split": "train",
+      "fraction": 0.2,
+      "images": 205,
+      "noise_probability": 0.2,
+      "class": "rhino",
+      "original_objects": 74,
+      "retained_objects": 63,
+      "removed_objects": 11
+    },
+    {
+      "split": "train",
+      "fraction": 0.2,
+      "images": 205,
+      "noise_probability": 0.2,
+      "class": "zebra",
+      "original_objects": 119,
+      "retained_objects": 101,
+      "removed_objects": 18
+    },
+    {
+      "split": "train",
+      "fraction": 1.0,
+      "images": 1021,
+      "noise_probability": 0,
+      "class": "buffalo",
+      "original_objects": 379,
+      "retained_objects": 379,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 1.0,
+      "images": 1021,
+      "noise_probability": 0,
+      "class": "elephant",
+      "original_objects": 551,
+      "retained_objects": 551,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 1.0,
+      "images": 1021,
+      "noise_probability": 0,
+      "class": "rhino",
+      "original_objects": 388,
+      "retained_objects": 388,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 1.0,
+      "images": 1021,
+      "noise_probability": 0,
+      "class": "zebra",
+      "original_objects": 563,
+      "retained_objects": 563,
+      "removed_objects": 0
+    },
+    {
+      "split": "train",
+      "fraction": 1.0,
+      "images": 1021,
+      "noise_probability": 0.2,
+      "class": "buffalo",
+      "original_objects": 379,
+      "retained_objects": 310,
+      "removed_objects": 69
+    },
+    {
+      "split": "train",
+      "fraction": 1.0,
+      "images": 1021,
+      "noise_probability": 0.2,
+      "class": "elephant",
+      "original_objects": 551,
+      "retained_objects": 437,
+      "removed_objects": 114
+    },
+    {
+      "split": "train",
+      "fraction": 1.0,
+      "images": 1021,
+      "noise_probability": 0.2,
+      "class": "rhino",
+      "original_objects": 388,
+      "retained_objects": 321,
+      "removed_objects": 67
+    },
+    {
+      "split": "train",
+      "fraction": 1.0,
+      "images": 1021,
+      "noise_probability": 0.2,
+      "class": "zebra",
+      "original_objects": 563,
+      "retained_objects": 452,
+      "removed_objects": 111
+    },
+    {
+      "split": "val",
+      "fraction": 1.0,
+      "images": 223,
+      "noise_probability": 0,
+      "class": "buffalo",
+      "original_objects": 89,
+      "retained_objects": 89,
+      "removed_objects": 0
+    },
+    {
+      "split": "val",
+      "fraction": 1.0,
+      "images": 223,
+      "noise_probability": 0,
+      "class": "elephant",
+      "original_objects": 91,
+      "retained_objects": 91,
+      "removed_objects": 0
+    },
+    {
+      "split": "val",
+      "fraction": 1.0,
+      "images": 223,
+      "noise_probability": 0,
+      "class": "rhino",
+      "original_objects": 83,
+      "retained_objects": 83,
+      "removed_objects": 0
+    },
+    {
+      "split": "val",
+      "fraction": 1.0,
+      "images": 223,
+      "noise_probability": 0,
+      "class": "zebra",
+      "original_objects": 114,
+      "retained_objects": 114,
+      "removed_objects": 0
+    },
+    {
+      "split": "test",
+      "fraction": 1.0,
+      "images": 227,
+      "noise_probability": 0,
+      "class": "buffalo",
+      "original_objects": 66,
+      "retained_objects": 66,
+      "removed_objects": 0
+    },
+    {
+      "split": "test",
+      "fraction": 1.0,
+      "images": 227,
+      "noise_probability": 0,
+      "class": "elephant",
+      "original_objects": 99,
+      "retained_objects": 99,
+      "removed_objects": 0
+    },
+    {
+      "split": "test",
+      "fraction": 1.0,
+      "images": 227,
+      "noise_probability": 0,
+      "class": "rhino",
+      "original_objects": 75,
+      "retained_objects": 75,
+      "removed_objects": 0
+    },
+    {
+      "split": "test",
+      "fraction": 1.0,
+      "images": 227,
+      "noise_probability": 0,
+      "class": "zebra",
+      "original_objects": 135,
+      "retained_objects": 135,
+      "removed_objects": 0
+    }
+  ],
+  "note": "Descriptive composition of this frozen subset/corruption realization; no new training"
+}

@@ -1,0 +1,5 @@
+# Preserve byte hashes in frozen source and evidence.
+* -text
+*.pdf binary
+*.png binary
+*.jpg binary

@@ -1,0 +1,20 @@
+{
+  "schema": "journal-reviewed-exclusions-v1",
+  "dataset": "wildlife",
+  "raw_source_fingerprint": "3d81e08098b499d73730d9f6293232f4d0b41abe4d5a2994320ce40238af9644",
+  "base_fingerprint": "b3114f1579a97b5443fe1877fc5b1a293f4f947b86ff0ed0f364a7f1bd037137",
+  "review_chronology": "After successful journal GPU preflight v1, before main submission, from the private input-only dHash candidate sheet. No preflight score was used for this decision.",
+  "exclusions": [
+    {
+      "split": "train",
+      "name": "1 (81).jpg",
+      "image_sha256": "7f7401c9cdb0f8851ca5bc2bb609a464f75b597a83d227ce9aeff74d9656a56d",
+      "peer_split": "test",
+      "peer_name": "1 (41).jpg",
+      "peer_sha256": "4a3546100b14a9f38d960f6f7344f1d87d057eab666500d8d5a5741703b10744",
+      "reason": "Visually similar buffalo/bird scene at different framing; conservative same-scene exclusion, not a byte-duplicate assertion",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.07323325163398693
+    }
+  ]
+}

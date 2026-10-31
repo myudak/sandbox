@@ -1,0 +1,143 @@
+{
+  "run_id": "journal-voc2007-AdamW-s102-85c47be03a6f",
+  "attempt": 1,
+  "status": "completed",
+  "started_utc": "2026-10-25T05:41:34.007485+00:00",
+  "optimizer": "AdamW",
+  "seed": 102,
+  "data_fraction": 0.2,
+  "noise_probability": 0.0,
+  "realized_noise_rate": 0.0,
+  "variant_fingerprint": "7555203b5e80a1400c65e4de2013a76d2743ff5c37308d5b7e7f0ab6dcf282a3",
+  "train_images": 501,
+  "epochs_budget": 20,
+  "test_evaluated": false,
+  "spec_sha256": "85c47be03a6fbd1ad82687cd93465cc54154bb4a0af625bf9b0024b343d8eb85",
+  "actual_train_images": 501,
+  "optimizer_details": {
+    "class": "AdamW",
+    "groups": [
+      {
+        "parameters": 2523408,
+        "lr": 0.0003,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.0003
+      },
+      {
+        "parameters": 9784,
+        "lr": 0.0003,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.0003
+      },
+      {
+        "parameters": 9928,
+        "lr": 0.0003,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0,
+        "param_group": "bias",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.0003
+      }
+    ],
+    "muon_factor": null,
+    "sgd_factor": null
+  },
+  "initial_model_state_sha256": "a2ca04273859fce93e77a9f196cce81af257eeec88012e5131b4a3a0ae13b4d6",
+  "training_seconds": 352.2281241790006,
+  "training_peak_vram_bytes": 2991662592,
+  "optimizer_steps": 1280,
+  "epochs_completed": 20,
+  "images_seen": 20480,
+  "sampling": {
+    "mode": "shuffled_cyclic_stream_v1",
+    "samples_per_epoch": 1024,
+    "musgd_head_lr_multiplier": 3.0
+  },
+  "samples_per_epoch": 1024,
+  "exposure_order_sha256": "2f6cd1555efb18d3096828d2afc201e3e9fdc87142c840b7b55df1f5c1692b55",
+  "best_validation_epoch": 20,
+  "best_validation_map50_95": 0.47707,
+  "best_weights": "/kaggle/working/muon_yolo_journal/runs/journal-voc2007-AdamW-s102-85c47be03a6f/attempt-001/train/weights/best.pt",
+  "best_weights_sha256": "43cbaad0555e47bf10ef876fad568fba72558470a03dd710f3d613a9fd34cfd4",
+  "validation_seconds": 2.699343496002257,
+  "val_map50_95": 0.47638267656591227,
+  "val_map50": 0.6760648710601465,
+  "val_precision": 0.719880305824249,
+  "val_recall": 0.6211121826205275,
+  "val_per_class_map50_95": [
+    0.5778007575154482,
+    0.4709218168937254,
+    0.46182857256979376,
+    0.3256159878205132,
+    0.3029218738900853,
+    0.6698937637993209,
+    0.5388020714513175,
+    0.6920850538021213,
+    0.31629370573725274,
+    0.2910620181197273,
+    0.39812662361291284,
+    0.5908108175852185,
+    0.5927954426400623,
+    0.6167525550744418,
+    0.5007596057231728,
+    0.12388141763176977,
+    0.5044500740582681,
+    0.510295909337203,
+    0.5762189582186792,
+    0.4663365058372107
+  ],
+  "lr0": 0.0003,
+  "finished_utc": "2026-10-25T05:47:29.126794+00:00",
+  "run_call_seconds": 355.1179225720007,
+  "dataset": "voc2007",
+  "subset_seed": 3102,
+  "corruption_seed": 4102,
+  "hyperparameters": {
+    "optimizer": "AdamW",
+    "lr0": 0.0003,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "candidate_id": "eb609f942ee0",
+  "roles": [
+    "voc2007_confirmation_102"
+  ],
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "source_fingerprint": "54f9a72afcc5db8615e63df1096eb12b798b259df6757251c1d8df04d9b2a299"
+}

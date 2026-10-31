@@ -1,0 +1,150 @@
+{
+  "run_id": "journal-wildlife-MuSGD-s11-48a35f95c30d",
+  "attempt": 1,
+  "status": "completed",
+  "started_utc": "2026-10-25T00:58:19.355980+00:00",
+  "optimizer": "MuSGD",
+  "seed": 11,
+  "data_fraction": 0.2,
+  "noise_probability": 0.2,
+  "realized_noise_rate": 0.1875,
+  "variant_fingerprint": "5b5658b27c41c67b18b7d65171ed39134b07e3ea6d80889c6c3c5763333d895f",
+  "train_images": 204,
+  "epochs_budget": 10,
+  "test_evaluated": false,
+  "spec_sha256": "48a35f95c30d798e8ac6d8c53ddb5f809533d49ee37645e44dca4b762f6afc03",
+  "actual_train_images": 204,
+  "optimizer_details": {
+    "class": "MuSGD",
+    "groups": [
+      {
+        "parameters": 0,
+        "lr": 0.03,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "use_muon": false,
+        "initial_lr": 0.03
+      },
+      {
+        "parameters": 0,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "use_muon": false,
+        "initial_lr": 0.01
+      },
+      {
+        "parameters": 2336,
+        "lr": 0.03,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "use_muon": false,
+        "initial_lr": 0.03
+      },
+      {
+        "parameters": 7448,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "use_muon": false,
+        "initial_lr": 0.01
+      },
+      {
+        "parameters": 2360,
+        "lr": 0.03,
+        "momentum": 0.9,
+        "nesterov": true,
+        "param_group": "bias",
+        "weight_decay": 0.0,
+        "use_muon": false,
+        "initial_lr": 0.03
+      },
+      {
+        "parameters": 7472,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "param_group": "bias",
+        "weight_decay": 0.0,
+        "use_muon": false,
+        "initial_lr": 0.01
+      },
+      {
+        "parameters": 124384,
+        "lr": 0.03,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "use_muon": true,
+        "param_group": "muon",
+        "initial_lr": 0.03
+      },
+      {
+        "parameters": 2391344,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "use_muon": true,
+        "param_group": "muon",
+        "initial_lr": 0.01
+      }
+    ],
+    "muon_factor": 0.2,
+    "sgd_factor": 1.0
+  },
+  "initial_model_state_sha256": "cada03cec3fd09519b09d9bd28076743361bd884a186fe8a39620d303c5312fb",
+  "training_seconds": 169.07149194499925,
+  "training_peak_vram_bytes": 2936811008,
+  "optimizer_steps": 640,
+  "epochs_completed": 10,
+  "images_seen": 10240,
+  "sampling": {
+    "mode": "shuffled_cyclic_stream_v1",
+    "samples_per_epoch": 1024,
+    "musgd_head_lr_multiplier": 3.0
+  },
+  "samples_per_epoch": 1024,
+  "exposure_order_sha256": "76db3d422568bc1e406b6edfe09e0386ac7002dfd2d1599e20e74eb4e8382731",
+  "best_validation_epoch": 10,
+  "best_validation_map50_95": 0.63858,
+  "best_weights": "/kaggle/working/muon_yolo_journal/runs/journal-wildlife-MuSGD-s11-48a35f95c30d/attempt-001/train/weights/best.pt",
+  "best_weights_sha256": "471c1ba9b9ec4e9d00d5bbed77f610128e7b9d686dc75f66939eb4b76f2841b1",
+  "validation_seconds": 1.4253309129999252,
+  "val_map50_95": 0.6381573021289725,
+  "val_map50": 0.8467888496399828,
+  "val_precision": 0.8279786866831055,
+  "val_recall": 0.7830805674146942,
+  "val_per_class_map50_95": [
+    0.5768333906338206,
+    0.5947646063308694,
+    0.7083868010772723,
+    0.6726444104739281
+  ],
+  "lr0": 0.01,
+  "finished_utc": "2026-10-25T01:01:10.008572+00:00",
+  "run_call_seconds": 170.65156211199974,
+  "dataset": "wildlife",
+  "subset_seed": 2026,
+  "corruption_seed": 2027,
+  "hyperparameters": {
+    "optimizer": "MuSGD",
+    "lr0": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "candidate_id": "34a1743a1cd9",
+  "roles": [
+    "tuning"
+  ],
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "source_fingerprint": "a2268d1ed873b662a32dc1dd134c73f6a70c1b60f1477d18ec82ed33bba8ba99"
+}

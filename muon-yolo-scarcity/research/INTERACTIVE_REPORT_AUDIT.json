@@ -1,0 +1,23 @@
+{
+  "status": "passed_remote_round_trip",
+  "source": "outputs\\kaggle_public_report_v5",
+  "training_rows": 120,
+  "interactive_figures": 5,
+  "chart_specs_and_controls_equal": true,
+  "numeric_evidence_equal": true,
+  "unicode_labels_equal": true,
+  "self_contained_html": true,
+  "artifact_sha256": {
+    "absolute-scores.html": "cf9d8bfbe05d1162334380c75127abd2573141b68532f85879ccb186002f2988",
+    "figure_specs.json": "1ff51f34b129b309088b3677cfe6651882c8da1a5d84fa3e0e6abe960dac8bd9",
+    "learning-curves.html": "6c4700c02236002865641351324b2f72d06ff4c6aa57a8209d853f9129de0193",
+    "muon-yolo-journal.log": "8e9c06bc712c4aa5284df4aa8d7169df75b90f0a6d60a5442a80960d58ceefc5",
+    "muon_yolo_results_explorer.html": "858eb0f774b5fd64695a35e86af23f6121b93639887d5ead97d0d74f33936c78",
+    "paired-effects.html": "79ff042f1f441f172615ab3879ae9b770ffe46cd1eb063f26746399512851f27",
+    "plotly.min.js": "6d21266ce1bd7d9e5ab4e115989c70c20de0382fd973a8f26ab58619eba4d603",
+    "primary-interaction.html": "434e186153bc74534cb78253ed54ccc61f3d07c03b02db16c04ebf4a9d789c68",
+    "reviewed_evidence.json": "17414c083bdf00b287abb8c9fbc0ff26195f3b934ae36774c450fad7ac202c9f",
+    "trial_metrics.csv": "e79cbfa7e2f7da833910e3837162e7e569aabc59765af46761ec0441bdb70cab",
+    "validation-search.html": "1a832570f5ddf7d5e17f243147da648bb234eefb8a8a77d2c50da830897a2b68"
+  }
+}

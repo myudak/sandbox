@@ -1,0 +1,143 @@
+{
+  "run_id": "journal-voc2007-AdamW-s102-bb6b06deb732",
+  "attempt": 1,
+  "status": "completed",
+  "started_utc": "2026-10-25T06:24:27.327754+00:00",
+  "optimizer": "AdamW",
+  "seed": 102,
+  "data_fraction": 1.0,
+  "noise_probability": 0.2,
+  "realized_noise_rate": 0.20805711371749108,
+  "variant_fingerprint": "fb736562248ade888810ad003b5c9ad1ca42e6bf19a56e6f9ad40ad1bf5da950",
+  "train_images": 2501,
+  "epochs_budget": 20,
+  "test_evaluated": false,
+  "spec_sha256": "bb6b06deb732a8c4749786c3e293f3523a76fb820595cd55024502d271ed2c7a",
+  "actual_train_images": 2501,
+  "optimizer_details": {
+    "class": "AdamW",
+    "groups": [
+      {
+        "parameters": 2523408,
+        "lr": 0.0003,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.0003
+      },
+      {
+        "parameters": 9784,
+        "lr": 0.0003,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.0003
+      },
+      {
+        "parameters": 9928,
+        "lr": 0.0003,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "weight_decay": 0.0,
+        "param_group": "bias",
+        "eps": 1e-08,
+        "amsgrad": false,
+        "maximize": false,
+        "foreach": null,
+        "capturable": false,
+        "differentiable": false,
+        "fused": true,
+        "decoupled_weight_decay": true,
+        "initial_lr": 0.0003
+      }
+    ],
+    "muon_factor": null,
+    "sgd_factor": null
+  },
+  "initial_model_state_sha256": "a2ca04273859fce93e77a9f196cce81af257eeec88012e5131b4a3a0ae13b4d6",
+  "training_seconds": 351.68938790299944,
+  "training_peak_vram_bytes": 3005558272,
+  "optimizer_steps": 1280,
+  "epochs_completed": 20,
+  "images_seen": 20480,
+  "sampling": {
+    "mode": "shuffled_cyclic_stream_v1",
+    "samples_per_epoch": 1024,
+    "musgd_head_lr_multiplier": 3.0
+  },
+  "samples_per_epoch": 1024,
+  "exposure_order_sha256": "4b71df81741186498bf4d42c14bab7b7cdad03e86d7827676e6612bb717d030c",
+  "best_validation_epoch": 20,
+  "best_validation_map50_95": 0.52609,
+  "best_weights": "/kaggle/working/muon_yolo_journal/runs/journal-voc2007-AdamW-s102-bb6b06deb732/attempt-001/train/weights/best.pt",
+  "best_weights_sha256": "91d51a560358c82cbe92ace54f8228b1b128b030fea08c80b508bfcb4e2c8871",
+  "validation_seconds": 2.8235006720024103,
+  "val_map50_95": 0.5264523427336026,
+  "val_map50": 0.7465064508529113,
+  "val_precision": 0.7951905516933554,
+  "val_recall": 0.6446600224654895,
+  "val_per_class_map50_95": [
+    0.6220837880697905,
+    0.4449418323319322,
+    0.46976758249188233,
+    0.41726340915605026,
+    0.3741744434672016,
+    0.709144955089726,
+    0.5470894040863105,
+    0.6710484740038549,
+    0.3912324046847816,
+    0.49941943242477194,
+    0.4242339695607428,
+    0.6528130629978846,
+    0.6597853479680487,
+    0.6619034049546384,
+    0.5436105616565732,
+    0.253005102070334,
+    0.47887073510906203,
+    0.5273975093411936,
+    0.5509293867133809,
+    0.6303320484938931
+  ],
+  "lr0": 0.0003,
+  "finished_utc": "2026-10-25T06:30:22.005573+00:00",
+  "run_call_seconds": 354.67675148099806,
+  "dataset": "voc2007",
+  "subset_seed": 3102,
+  "corruption_seed": 4102,
+  "hyperparameters": {
+    "optimizer": "AdamW",
+    "lr0": 0.0003,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "candidate_id": "eb609f942ee0",
+  "roles": [
+    "voc2007_confirmation_102"
+  ],
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "source_fingerprint": "54f9a72afcc5db8615e63df1096eb12b798b259df6757251c1d8df04d9b2a299"
+}

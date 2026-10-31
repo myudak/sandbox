@@ -1,0 +1,150 @@
+{
+  "run_id": "journal-wildlife-MuSGD-s101-2996e0d09054",
+  "attempt": 1,
+  "status": "completed",
+  "started_utc": "2026-10-25T08:07:44.899166+00:00",
+  "optimizer": "MuSGD",
+  "seed": 101,
+  "data_fraction": 1.0,
+  "noise_probability": 0.2,
+  "realized_noise_rate": 0.2154255319148936,
+  "variant_fingerprint": "92f50ec23fc1afc476f8f0d5d880f7cfc9662ef65bdf1be5aec54b412099b145",
+  "train_images": 1020,
+  "epochs_budget": 60,
+  "test_evaluated": false,
+  "spec_sha256": "2996e0d09054e2db0b42a795c03bda279811393e5ddd65c03638f5a728eca734",
+  "actual_train_images": 1020,
+  "optimizer_details": {
+    "class": "MuSGD",
+    "groups": [
+      {
+        "parameters": 0,
+        "lr": 0.009000000000000001,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "use_muon": false,
+        "initial_lr": 0.009000000000000001
+      },
+      {
+        "parameters": 0,
+        "lr": 0.003,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "use_muon": false,
+        "initial_lr": 0.003
+      },
+      {
+        "parameters": 2336,
+        "lr": 0.009000000000000001,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "use_muon": false,
+        "initial_lr": 0.009000000000000001
+      },
+      {
+        "parameters": 7448,
+        "lr": 0.003,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "use_muon": false,
+        "initial_lr": 0.003
+      },
+      {
+        "parameters": 2360,
+        "lr": 0.009000000000000001,
+        "momentum": 0.9,
+        "nesterov": true,
+        "param_group": "bias",
+        "weight_decay": 0.0,
+        "use_muon": false,
+        "initial_lr": 0.009000000000000001
+      },
+      {
+        "parameters": 7472,
+        "lr": 0.003,
+        "momentum": 0.9,
+        "nesterov": true,
+        "param_group": "bias",
+        "weight_decay": 0.0,
+        "use_muon": false,
+        "initial_lr": 0.003
+      },
+      {
+        "parameters": 124384,
+        "lr": 0.009000000000000001,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "use_muon": true,
+        "param_group": "muon",
+        "initial_lr": 0.009000000000000001
+      },
+      {
+        "parameters": 2391344,
+        "lr": 0.003,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "use_muon": true,
+        "param_group": "muon",
+        "initial_lr": 0.003
+      }
+    ],
+    "muon_factor": 0.2,
+    "sgd_factor": 1.0
+  },
+  "initial_model_state_sha256": "35a8abe44432d647f6a3a47b536561013338ba04119e91ee86dff17a9c6d0ea2",
+  "training_seconds": 1025.6064490799981,
+  "training_peak_vram_bytes": 2956092928,
+  "optimizer_steps": 3840,
+  "epochs_completed": 60,
+  "images_seen": 61440,
+  "sampling": {
+    "mode": "shuffled_cyclic_stream_v1",
+    "samples_per_epoch": 1024,
+    "musgd_head_lr_multiplier": 3.0
+  },
+  "samples_per_epoch": 1024,
+  "exposure_order_sha256": "04f8cae9e3406bb056b075a12361beeaaf1adb5de41705625098e871fa1d9eeb",
+  "best_validation_epoch": 51,
+  "best_validation_map50_95": 0.78593,
+  "best_weights": "/kaggle/working/muon_yolo_journal/runs/journal-wildlife-MuSGD-s101-2996e0d09054/attempt-001/train/weights/best.pt",
+  "best_weights_sha256": "6d1277bbc66f3d803560af7b5190643027b1200d069c116dfb73d2504608d3f5",
+  "validation_seconds": 1.4330866460004472,
+  "val_map50_95": 0.7822496732393366,
+  "val_map50": 0.9238788594819771,
+  "val_precision": 0.9122532770724792,
+  "val_recall": 0.8679836741129434,
+  "val_per_class_map50_95": [
+    0.8058021901291441,
+    0.7504357657394845,
+    0.806475352312475,
+    0.7662853847762423
+  ],
+  "lr0": 0.003,
+  "finished_utc": "2026-10-25T08:24:52.099297+00:00",
+  "run_call_seconds": 1027.199121657999,
+  "dataset": "wildlife",
+  "subset_seed": 3101,
+  "corruption_seed": 4101,
+  "hyperparameters": {
+    "optimizer": "MuSGD",
+    "lr0": 0.003,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "candidate_id": "d4ffe71ced46",
+  "roles": [
+    "long_schedule_transfer"
+  ],
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "source_fingerprint": "a2268d1ed873b662a32dc1dd134c73f6a70c1b60f1477d18ec82ed33bba8ba99"
+}

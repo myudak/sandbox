@@ -1,0 +1,106 @@
+{
+  "status": "release_checks_passed",
+  "pdf": "D:\\Home\\Projects\\muon_yolo_scarcity\\output\\pdf\\muon_yolo_scarcity.pdf",
+  "pdf_sha256": "7f3a6ee9bac442723381c7640d97f0844a2e70983f1bdb6306c03a7482dbfe0e",
+  "qa_directory": "D:\\Home\\Projects\\muon_yolo_scarcity\\tmp\\pdfs\\qa\\7f3a6ee9bac4",
+  "author": "Muchammad Yuda Tri Ananda",
+  "pages": 10,
+  "embedded_fonts": {
+    "/IHAIZV+LMRoman17-Regular": true,
+    "/BZIVMZ+LMRoman12-Regular": true,
+    "/IXFAWU+LMMono10-Regular": true,
+    "/TQTHRL+LMRoman10-Bold": true,
+    "/YEUUOC+LMRoman10-Regular": true,
+    "/AKHCZK+LMMathSymbols10-Regular": true,
+    "/VDVGTR+LMRoman10-Regular": true,
+    "/CAFSZL+LMMathItalic10-Regular": true,
+    "/DDIEWW+LMRoman12-Bold": true,
+    "/FKPJSN+LMMathItalic8-Regular": true,
+    "/PVTTLK+LMRoman8-Regular": true,
+    "/JAGKKY+LMRoman10-Italic": true
+  },
+  "uri_links": [
+    "mailto:yuda@myudak.com",
+    "https://www.kaggle.com/code/myudak/muon-yolo-journal",
+    "https://www.kaggle.com/code/myudak/muon-yolo-journal",
+    "https://www.kaggle.com/code/myudak/muon-yolo-journal?scriptVersionId=361947826",
+    "https://arxiv.org/abs/2002.04672",
+    "https://kellerjordan.github.io/posts/muon/",
+    "https://kellerjordan.github.io/posts/muon/",
+    "https://arxiv.org/abs/2606.03748",
+    "https://arxiv.org/abs/2605.19619",
+    "https://arxiv.org/abs/2610.21555",
+    "https://arxiv.org/abs/2606.09658",
+    "https://proceedings.mlr.press/v306/qu26e.html",
+    "https://arxiv.org/abs/2609.21822",
+    "https://arxiv.org/abs/2609.21822",
+    "https://doi.org/10.1007/s11263-009-0275-4",
+    "https://docs.ultralytics.com/datasets/detect/african-wildlife/"
+  ],
+  "page_statistics": [
+    {
+      "page": 1,
+      "text_characters": 2830
+    },
+    {
+      "page": 2,
+      "text_characters": 3554
+    },
+    {
+      "page": 3,
+      "text_characters": 3435
+    },
+    {
+      "page": 4,
+      "text_characters": 3095
+    },
+    {
+      "page": 5,
+      "text_characters": 2938
+    },
+    {
+      "page": 6,
+      "text_characters": 1175
+    },
+    {
+      "page": 7,
+      "text_characters": 3695
+    },
+    {
+      "page": 8,
+      "text_characters": 2173
+    },
+    {
+      "page": 9,
+      "text_characters": 1612
+    },
+    {
+      "page": 10,
+      "text_characters": 2141
+    }
+  ],
+  "source_sha256": "029865004eb2d00722db5deb4c9470ed1c1db5b68b65a0077cfd2ab4a4cc179d",
+  "rasterized_pages": 10,
+  "visual_review": "passed: updated email on page 1 inspected; pages 2-10 pixel-identical to reviewed release",
+  "email": "yuda@myudak.com",
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "built_in_compile_status": "success",
+  "manuscript_files_sha256": {
+    "paper/images/journal_test_contrasts.png": "422f7e5c9007d48af4a8a0829d7e8f8dba4930032f6b997338ea7837b6bdad52",
+    "paper/images/pilot_validation_trajectories.png": "dc11f5e6e1e7391e050aec0a68cc552acbd801257bc4c650ac257eb8499a3adb",
+    "paper/journal_results.tex": "81bb94766df4d65e4794eecbda863bcc2888932b613ce5ed433df5553f22a901",
+    "paper/main.tex": "029865004eb2d00722db5deb4c9470ed1c1db5b68b65a0077cfd2ab4a4cc179d",
+    "paper/test_means.tex": "8fc21ac442f16f4aa579b691584cdfe740ec80da037a8f74e19323f017a0dad9"
+  }
+}

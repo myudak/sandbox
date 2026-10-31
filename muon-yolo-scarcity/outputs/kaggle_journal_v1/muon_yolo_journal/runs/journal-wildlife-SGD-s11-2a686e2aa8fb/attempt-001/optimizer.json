@@ -1,0 +1,49 @@
+{
+  "class": "SGD",
+  "groups": [
+    {
+      "parameters": 2515728,
+      "lr": 0.03,
+      "momentum": 0.9,
+      "nesterov": true,
+      "weight_decay": 0.0,
+      "param_group": "weight",
+      "dampening": 0,
+      "maximize": false,
+      "foreach": null,
+      "differentiable": false,
+      "fused": null,
+      "initial_lr": 0.03
+    },
+    {
+      "parameters": 9784,
+      "lr": 0.03,
+      "momentum": 0.9,
+      "nesterov": true,
+      "weight_decay": 0.0,
+      "param_group": "bn",
+      "dampening": 0,
+      "maximize": false,
+      "foreach": null,
+      "differentiable": false,
+      "fused": null,
+      "initial_lr": 0.03
+    },
+    {
+      "parameters": 9832,
+      "lr": 0.03,
+      "momentum": 0.9,
+      "nesterov": true,
+      "param_group": "bias",
+      "dampening": 0,
+      "weight_decay": 0,
+      "maximize": false,
+      "foreach": null,
+      "differentiable": false,
+      "fused": null,
+      "initial_lr": 0.03
+    }
+  ],
+  "muon_factor": null,
+  "sgd_factor": null
+}

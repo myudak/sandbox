@@ -1,0 +1,39 @@
+{
+  "dataset": "VOC2007-derived controlled detection task",
+  "archives": [
+    {
+      "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/VOCtrainval_06-Nov-2007.zip",
+      "filename": "VOCtrainval_06-Nov-2007.zip",
+      "sha256": "82a7f58ca92950792ee086875f9238abbbc8434b8f463f6dc0962ff18f2f8642"
+    },
+    {
+      "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/VOCtest_06-Nov-2007.zip",
+      "filename": "VOCtest_06-Nov-2007.zip",
+      "sha256": "a5b13ab807f50802ac4651daac9d526d0236116be4b3e09626bfc35ca1338d9a"
+    }
+  ],
+  "source": "http://host.robots.ox.ac.uk/pascal/VOC/voc2007/",
+  "conversion": "one-based inclusive VOC to zero-based half-open bounds; all difficult objects included; normalized YOLO xywh",
+  "evaluation": "mAP50-95 on converted all-object annotations, not official VOC AP",
+  "license": "Original Flickr image rights/VOC usage terms apply; images not redistributed in source bundle",
+  "split_conversion_counts": {
+    "train": {
+      "images": 2501,
+      "objects": 7844,
+      "difficult_included": 1543,
+      "boxes_clipped_to_image": 0
+    },
+    "val": {
+      "images": 2510,
+      "objects": 7818,
+      "difficult_included": 1511,
+      "boxes_clipped_to_image": 0
+    },
+    "test": {
+      "images": 4952,
+      "objects": 14976,
+      "difficult_included": 2944,
+      "boxes_clipped_to_image": 0
+    }
+  }
+}

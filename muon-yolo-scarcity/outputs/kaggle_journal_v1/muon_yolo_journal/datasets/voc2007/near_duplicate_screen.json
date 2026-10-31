@@ -1,0 +1,218 @@
+{
+  "rule": {
+    "max_dhash_distance": 6,
+    "max_normalized_rgb_mae": 0.025,
+    "max_relative_aspect_change": 0.05
+  },
+  "candidates": [
+    {
+      "first_split": "train",
+      "first_name": "000537.jpg",
+      "second_split": "val",
+      "second_name": "001066.jpg",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.2989072712418301,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "001436.jpg",
+      "second_split": "val",
+      "second_name": "002508.jpg",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.39252323325163396,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "002765.jpg",
+      "second_split": "val",
+      "second_name": "002508.jpg",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.3150033190359477,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "003183.jpg",
+      "second_split": "val",
+      "second_name": "009006.jpg",
+      "dhash_distance": 4,
+      "normalized_rgb_mae": 0.38011514501633986,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "001436.jpg",
+      "second_split": "test",
+      "second_name": "001059.jpg",
+      "dhash_distance": 3,
+      "normalized_rgb_mae": 0.35724826388888886,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "001436.jpg",
+      "second_split": "test",
+      "second_name": "001178.jpg",
+      "dhash_distance": 3,
+      "normalized_rgb_mae": 0.22108098447712418,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "001436.jpg",
+      "second_split": "test",
+      "second_name": "002289.jpg",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.14918045343137254,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "001436.jpg",
+      "second_split": "test",
+      "second_name": "007091.jpg",
+      "dhash_distance": 3,
+      "normalized_rgb_mae": 0.4661062602124183,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "001436.jpg",
+      "second_split": "test",
+      "second_name": "009921.jpg",
+      "dhash_distance": 5,
+      "normalized_rgb_mae": 0.36546543096405226,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "002765.jpg",
+      "second_split": "test",
+      "second_name": "000350.jpg",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.31552542892156865,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "002765.jpg",
+      "second_split": "test",
+      "second_name": "001059.jpg",
+      "dhash_distance": 1,
+      "normalized_rgb_mae": 0.26453482434640524,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "002765.jpg",
+      "second_split": "test",
+      "second_name": "002289.jpg",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.2127170138888889,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "002765.jpg",
+      "second_split": "test",
+      "second_name": "007091.jpg",
+      "dhash_distance": 1,
+      "normalized_rgb_mae": 0.3461154513888889,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "002765.jpg",
+      "second_split": "test",
+      "second_name": "008589.jpg",
+      "dhash_distance": 5,
+      "normalized_rgb_mae": 0.35042126225490194,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "002765.jpg",
+      "second_split": "test",
+      "second_name": "009921.jpg",
+      "dhash_distance": 5,
+      "normalized_rgb_mae": 0.3147122651143791,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "003183.jpg",
+      "second_split": "test",
+      "second_name": "001059.jpg",
+      "dhash_distance": 5,
+      "normalized_rgb_mae": 0.2697878370098039,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "003183.jpg",
+      "second_split": "test",
+      "second_name": "002289.jpg",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.1863549325980392,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "003183.jpg",
+      "second_split": "test",
+      "second_name": "007091.jpg",
+      "dhash_distance": 5,
+      "normalized_rgb_mae": 0.21796875,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "006304.jpg",
+      "second_split": "test",
+      "second_name": "001059.jpg",
+      "dhash_distance": 5,
+      "normalized_rgb_mae": 0.17308134191176472,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "006304.jpg",
+      "second_split": "test",
+      "second_name": "002289.jpg",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.3239698223039216,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "train",
+      "first_name": "006304.jpg",
+      "second_split": "test",
+      "second_name": "007091.jpg",
+      "dhash_distance": 5,
+      "normalized_rgb_mae": 0.3494638480392157,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "val",
+      "first_name": "002508.jpg",
+      "second_split": "test",
+      "second_name": "001059.jpg",
+      "dhash_distance": 5,
+      "normalized_rgb_mae": 0.213491881127451,
+      "excluded_by_rule": false
+    },
+    {
+      "first_split": "val",
+      "first_name": "002508.jpg",
+      "second_split": "test",
+      "second_name": "007091.jpg",
+      "dhash_distance": 5,
+      "normalized_rgb_mae": 0.1306576797385621,
+      "excluded_by_rule": false
+    }
+  ],
+  "excluded": [],
+  "limitation": "Conservative deterministic screen, not an exhaustive scene or pretraining-overlap audit"
+}

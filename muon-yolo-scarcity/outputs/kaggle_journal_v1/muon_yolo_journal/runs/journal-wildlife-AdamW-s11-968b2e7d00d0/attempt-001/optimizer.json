@@ -1,0 +1,64 @@
+{
+  "class": "AdamW",
+  "groups": [
+    {
+      "parameters": 2515728,
+      "lr": 0.003,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0,
+      "param_group": "weight",
+      "eps": 1e-08,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": true,
+      "decoupled_weight_decay": true,
+      "initial_lr": 0.003
+    },
+    {
+      "parameters": 9784,
+      "lr": 0.003,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0,
+      "param_group": "bn",
+      "eps": 1e-08,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": true,
+      "decoupled_weight_decay": true,
+      "initial_lr": 0.003
+    },
+    {
+      "parameters": 9832,
+      "lr": 0.003,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0,
+      "param_group": "bias",
+      "eps": 1e-08,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": true,
+      "decoupled_weight_decay": true,
+      "initial_lr": 0.003
+    }
+  ],
+  "muon_factor": null,
+  "sgd_factor": null
+}

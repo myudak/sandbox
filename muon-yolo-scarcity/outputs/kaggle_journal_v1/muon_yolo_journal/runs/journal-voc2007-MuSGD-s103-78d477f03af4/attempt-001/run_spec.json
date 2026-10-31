@@ -1,0 +1,96 @@
+{
+  "study": {
+    "study": "journal",
+    "dataset": "voc2007",
+    "split_policy": "holdout_priority_reviewed_v2",
+    "reviewed_exclusions_file": "duplicate_exclusions.json",
+    "checkpoint": "yolo26n.pt",
+    "ultralytics_version": "8.4.187",
+    "fractions": [
+      0.2
+    ],
+    "noise_levels": [
+      0.0
+    ],
+    "noise_type": "missing_box",
+    "subset_seed": 3103,
+    "corruption_seed": 4103,
+    "training_seeds": [
+      103
+    ],
+    "optimizers": {
+      "MuSGD": {
+        "lr0": 0.003,
+        "momentum": 0.9,
+        "weight_decay": 0.0005
+      }
+    },
+    "train": {
+      "epochs": 20,
+      "imgsz": 512,
+      "batch": 16,
+      "nbs": 16,
+      "workers": 2,
+      "device": 0,
+      "amp": false,
+      "deterministic": true,
+      "warmup_epochs": 0.0,
+      "warmup_bias_lr": 0.0,
+      "warmup_momentum": 0.8,
+      "lrf": 0.01,
+      "cos_lr": false,
+      "patience": 0,
+      "close_mosaic": 0,
+      "mosaic": 0.0,
+      "mixup": 0.0,
+      "cutmix": 0.0,
+      "copy_paste": 0.0,
+      "hsv_h": 0.015,
+      "hsv_s": 0.7,
+      "hsv_v": 0.4,
+      "degrees": 0.0,
+      "translate": 0.1,
+      "scale": 0.5,
+      "shear": 0.0,
+      "perspective": 0.0,
+      "flipud": 0.0,
+      "fliplr": 0.5,
+      "multi_scale": 0.0,
+      "rect": false,
+      "cache": false,
+      "plots": false,
+      "save": true,
+      "val": true,
+      "compile": false,
+      "cls_remap": false
+    },
+    "evaluation": {
+      "split": "val",
+      "conf": 0.001,
+      "iou": 0.7,
+      "max_det": 300,
+      "augment": false,
+      "half": false
+    },
+    "sampling": {
+      "mode": "shuffled_cyclic_stream_v1",
+      "samples_per_epoch": 1024,
+      "musgd_head_lr_multiplier": 3.0
+    }
+  },
+  "code_sha256": "217520ec98348e5a74500ac4efb9a3c1188580e76a8a48ff0c16d0bc12889d46",
+  "environment": {
+    "gpu": "Tesla T4",
+    "device_used": 0,
+    "gpu_count_visible": 2,
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "ultralytics": "8.4.187"
+  },
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "source_fingerprint": "54f9a72afcc5db8615e63df1096eb12b798b259df6757251c1d8df04d9b2a299",
+  "variant_fingerprint": "375e32f7f368a1381ca228fbb11fc95b9c84412167547514cc2db64594a9a250",
+  "optimizer": "MuSGD",
+  "seed": 103
+}

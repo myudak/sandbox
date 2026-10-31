@@ -1,0 +1,20 @@
+{
+  "rule": {
+    "max_dhash_distance": 6,
+    "max_normalized_rgb_mae": 0.025,
+    "max_relative_aspect_change": 0.05
+  },
+  "candidates": [
+    {
+      "first_split": "train",
+      "first_name": "1 (81).jpg",
+      "second_split": "test",
+      "second_name": "1 (41).jpg",
+      "dhash_distance": 6,
+      "normalized_rgb_mae": 0.07323325163398693,
+      "excluded_by_rule": false
+    }
+  ],
+  "excluded": [],
+  "limitation": "Conservative deterministic screen, not an exhaustive scene or pretraining-overlap audit"
+}

@@ -1,0 +1,67 @@
+All estimates below use joint blocks 101--103. Differences and approximate unadjusted 95\% Student $t$ intervals are in AP points. The three-way contrast follows the definition in the main text.
+\Needspace{20\baselineskip}
+\subsection{African Wildlife: validation}
+\begin{longtable}{@{}lrrrr@{}}
+\caption{African Wildlife: validation paired recipe differences.}\\
+\toprule Recipe versus AdamW & Images & Missing & Mean & 95\% interval\\\midrule
+\endfirsthead
+\toprule Recipe versus AdamW & Images & Missing & Mean & 95\% interval\\\midrule
+\endhead
+MuSGD & 20\% & 0\% & -0.71 & [-4.22, 2.80]\\
+SGD & 20\% & 0\% & +0.72 & [-2.96, 4.40]\\
+MuSGD & 20\% & 20\% & -1.37 & [-3.32, 0.59]\\
+SGD & 20\% & 20\% & +0.01 & [-2.04, 2.05]\\
+MuSGD & 100\% & 0\% & -0.17 & [-1.12, 0.77]\\
+SGD & 100\% & 0\% & +0.66 & [-1.36, 2.69]\\
+MuSGD & 100\% & 20\% & +0.62 & [0.07, 1.17]\\
+SGD & 100\% & 20\% & +0.99 & [-0.72, 2.70]\\
+\bottomrule\end{longtable}
+MuSGD--AdamW three-way contrast: $-1.451$ AP points; approximate 95\% interval $[-5.864, 2.963]$.
+SGD--AdamW three-way contrast: $-1.038$ AP points; approximate 95\% interval $[-6.673, 4.596]$.
+\Needspace{14\baselineskip}
+\subsection{VOC2007-derived: validation}
+\begin{longtable}{@{}lrrrr@{}}
+\caption{VOC2007-derived: validation paired recipe differences.}\\
+\toprule Recipe versus AdamW & Images & Missing & Mean & 95\% interval\\\midrule
+\endfirsthead
+\toprule Recipe versus AdamW & Images & Missing & Mean & 95\% interval\\\midrule
+\endhead
+MuSGD & 20\% & 0\% & +1.79 & [-0.04, 3.62]\\
+MuSGD & 20\% & 20\% & +1.48 & [0.31, 2.65]\\
+MuSGD & 100\% & 0\% & +0.74 & [-0.89, 2.38]\\
+MuSGD & 100\% & 20\% & +1.64 & [-0.99, 4.26]\\
+\bottomrule\end{longtable}
+MuSGD--AdamW three-way contrast: $-1.199$ AP points; approximate 95\% interval $[-6.280, 3.883]$.
+\Needspace{20\baselineskip}
+\subsection{African Wildlife: frozen test}
+\begin{longtable}{@{}lrrrr@{}}
+\caption{African Wildlife: frozen test paired recipe differences.}\\
+\toprule Recipe versus AdamW & Images & Missing & Mean & 95\% interval\\\midrule
+\endfirsthead
+\toprule Recipe versus AdamW & Images & Missing & Mean & 95\% interval\\\midrule
+\endhead
+MuSGD & 20\% & 0\% & +0.79 & [-0.66, 2.23]\\
+SGD & 20\% & 0\% & +0.87 & [-0.67, 2.41]\\
+MuSGD & 20\% & 20\% & +0.26 & [-0.44, 0.96]\\
+SGD & 20\% & 20\% & +2.73 & [0.61, 4.85]\\
+MuSGD & 100\% & 0\% & +0.74 & [-1.85, 3.34]\\
+SGD & 100\% & 0\% & +0.28 & [-2.58, 3.14]\\
+MuSGD & 100\% & 20\% & -0.25 & [-4.75, 4.25]\\
+SGD & 100\% & 20\% & +0.08 & [-5.04, 5.19]\\
+\bottomrule\end{longtable}
+MuSGD--AdamW three-way contrast: $+0.470$ AP points; approximate 95\% interval $[-6.383, 7.322]$.
+SGD--AdamW three-way contrast: $+2.059$ AP points; approximate 95\% interval $[-2.292, 6.410]$.
+\Needspace{14\baselineskip}
+\subsection{VOC2007-derived: frozen test}
+\begin{longtable}{@{}lrrrr@{}}
+\caption{VOC2007-derived: frozen test paired recipe differences.}\\
+\toprule Recipe versus AdamW & Images & Missing & Mean & 95\% interval\\\midrule
+\endfirsthead
+\toprule Recipe versus AdamW & Images & Missing & Mean & 95\% interval\\\midrule
+\endhead
+MuSGD & 20\% & 0\% & +1.55 & [-0.21, 3.32]\\
+MuSGD & 20\% & 20\% & +1.67 & [0.43, 2.91]\\
+MuSGD & 100\% & 0\% & +1.10 & [0.67, 1.54]\\
+MuSGD & 100\% & 20\% & +0.73 & [-0.66, 2.12]\\
+\bottomrule\end{longtable}
+MuSGD--AdamW three-way contrast: $+0.488$ AP points; approximate 95\% interval $[-0.660, 1.637]$.

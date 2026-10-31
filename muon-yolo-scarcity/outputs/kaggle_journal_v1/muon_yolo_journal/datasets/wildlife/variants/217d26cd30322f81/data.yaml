@@ -1,0 +1,9 @@
+path: /tmp/muon_yolo_journal/d1c002051673/variants/wildlife/217d26cd30322f81
+train: images/train
+val: /tmp/muon_yolo_journal/d1c002051673/evaluation/wildlife/images/val
+test: /tmp/muon_yolo_journal/d1c002051673/wildlife/images/test
+names:
+  0: buffalo
+  1: elephant
+  2: rhino
+  3: zebra

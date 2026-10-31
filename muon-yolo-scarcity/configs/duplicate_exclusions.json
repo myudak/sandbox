@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "original_source_fingerprint": "3d81e08098b499d73730d9f6293232f4d0b41abe4d5a2994320ce40238af9644",
+  "reviewed_on": "2026-10-25",
+  "policy": "holdout_priority_reviewed_v2",
+  "method": "dHash <= 3 candidates followed by visual review; not an exhaustive scene audit",
+  "exclusions": [
+    {
+      "split": "train",
+      "name": "1 (314).jpg",
+      "image_sha256": "333a2bdf0151975f9e90e0d628318e85a119bdd9fabe021953df8d1c737b6232",
+      "peer_split": "test",
+      "peer_name": "1 (183).jpg",
+      "peer_sha256": "a5c3a9343993e7be5d805ca853056f2be1385193150d8153841bfdec6ec7bc7e",
+      "dhash_distance": 0,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "1 (315).jpg",
+      "image_sha256": "475a41cb825a28f1b6e5860c0cd36bf3ccdfa21546068fecd48da697ec84ff9b",
+      "peer_split": "test",
+      "peer_name": "1 (356).jpg",
+      "peer_sha256": "06f8846a1bb754b88fbabe938a50d255d17df5c791b899cbb160f7ce44d08ec3",
+      "dhash_distance": 0,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "1 (355).jpg",
+      "image_sha256": "4ff8ae1bef05fc876ee58f22805e1c3330bc17904ba3dad94b673b515e21f138",
+      "peer_split": "test",
+      "peer_name": "1 (192).jpg",
+      "peer_sha256": "603138d4f53859f17a84cb284a1a623195f585422ac88ce492fdfa8b105baa8e",
+      "dhash_distance": 0,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "1 (360).jpg",
+      "image_sha256": "a8bfa1ccac93f1486a8eda10fb6010e3ed1045e42b29394f819909d6bdc75762",
+      "peer_split": "val",
+      "peer_name": "1 (334).jpg",
+      "peer_sha256": "424163fcf8e6665d874bf6bb09d63678753490be2cbf4d4c0dec765c22669306",
+      "dhash_distance": 0,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "1 (86).jpg",
+      "image_sha256": "a3df8dceed0531f3600842c4bb1431ef7eece0e283ffb517ea5e8bcb9a273dc8",
+      "peer_split": "test",
+      "peer_name": "1 (128).jpg",
+      "peer_sha256": "64c330c35f2495d27e4fe48ef7589f4b9190ab84bf8034b97eff9fba73ae3f44",
+      "dhash_distance": 0,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "3 (116).jpg",
+      "image_sha256": "3a327307de3e6c7a1b11eb89ae5d702781a6055e23ccaab0aa7dba520d734fed",
+      "peer_split": "test",
+      "peer_name": "3 (323).jpg",
+      "peer_sha256": "70e643981774f447d5922942ffbc2f4b6893bfc9aa2f50bd8f9c34e77ffb0f03",
+      "dhash_distance": 0,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "3 (275).jpg",
+      "image_sha256": "6797722d2e48ec38de079ed14f0e535c8d5dadd8c4a9e8dd113036fc3bf504b0",
+      "peer_split": "test",
+      "peer_name": "3 (192).jpg",
+      "peer_sha256": "0e0965312b696ee6993b433a98fd47b387006fcc70a725fe54d2f8e1795af141",
+      "dhash_distance": 0,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "1 (237).jpg",
+      "image_sha256": "e3d561933cedac6452293507a8d19ff820a5039a1fa89f4d696ff086f3d77738",
+      "peer_split": "test",
+      "peer_name": "1 (365).jpg",
+      "peer_sha256": "01c89fc1fb5d7e5289fdbbe870ff51bc165cc339ac899f16e79d2a550865045e",
+      "dhash_distance": 1,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "1 (70).jpg",
+      "image_sha256": "ec8e84546f43dd8bf28dcc13776156b141367b5d24bfa85ef49900e43b86b521",
+      "peer_split": "test",
+      "peer_name": "1 (74).jpg",
+      "peer_sha256": "eb83abe793f176c021901d1c60b8337b848cc6939c7516d5ec3684eb7cdccdd9",
+      "dhash_distance": 1,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "3 (311).jpg",
+      "image_sha256": "ab272b4483a06923c42f5f5cdbe84311499f4374ba630b9f02d5a71d199dd49a",
+      "peer_split": "val",
+      "peer_name": "3 (364).jpg",
+      "peer_sha256": "313ac8e4a255eab3f6bf521ecaf25e32d6396db9639521bb3f991a84090ff792",
+      "dhash_distance": 1,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "1 (325).jpg",
+      "image_sha256": "f4dc90fdc67756381dfd1b19a7595d6d2d0e6cf0425719254c498a83f477bbf7",
+      "peer_split": "test",
+      "peer_name": "1 (55).jpg",
+      "peer_sha256": "9b7b67719b3ec86e196da1ca77ff3ce9480a35c913f22ba312ae7c597f2a0f40",
+      "dhash_distance": 2,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    },
+    {
+      "split": "train",
+      "name": "1 (175).jpg",
+      "image_sha256": "6ce0676e0dc81394f8fa0355f5ccb06a3a05423540bfb6bd868a261fbb8e2046",
+      "peer_split": "test",
+      "peer_name": "1 (356).jpg",
+      "peer_sha256": "06f8846a1bb754b88fbabe938a50d255d17df5c791b899cbb160f7ce44d08ec3",
+      "dhash_distance": 3,
+      "review": "Visually reviewed contact sheet: same scene / near duplicate"
+    }
+  ]
+}

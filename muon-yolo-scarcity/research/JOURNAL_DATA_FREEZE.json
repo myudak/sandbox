@@ -1,0 +1,49 @@
+{
+  "frozen_utc": "2026-10-24T22:45:31.272822+00:00",
+  "preflight_version": 1,
+  "preflight_results_sha256": "882dbce86b5bb3b77bc5cdd335c7cdf1b84d62fb35179cc70f1031a4071ea07c",
+  "review_basis": "Input-only candidate sheets, not model performance",
+  "wildlife_additional_review_sha256": "2317d220a17a7a6ed33ea3782ec012a41f9ea91c5e6982aadf2653c1bc4dd02b",
+  "datasets": {
+    "wildlife": {
+      "fingerprint": "a2268d1ed873b662a32dc1dd134c73f6a70c1b60f1477d18ec82ed33bba8ba99",
+      "raw_source_fingerprint": "3d81e08098b499d73730d9f6293232f4d0b41abe4d5a2994320ce40238af9644",
+      "counts": {
+        "train": {
+          "images": 1020,
+          "objects": 1880
+        },
+        "val": {
+          "images": 223,
+          "objects": 377
+        },
+        "test": {
+          "images": 227,
+          "objects": 375
+        }
+      },
+      "test_membership_unchanged": true
+    },
+    "voc2007": {
+      "fingerprint": "54f9a72afcc5db8615e63df1096eb12b798b259df6757251c1d8df04d9b2a299",
+      "raw_source_fingerprint": "9de47918c444a9bdf718b8c62cf98cbf441197ce9c812b4f76baee15f5639b52",
+      "counts": {
+        "train": {
+          "images": 2501,
+          "objects": 7844
+        },
+        "val": {
+          "images": 512,
+          "objects": 1591
+        },
+        "test": {
+          "images": 4952,
+          "objects": 14976
+        }
+      },
+      "test_membership_unchanged": true
+    }
+  },
+  "voc_candidate_review": "23 dHash candidates shown; no same-scene pair apparent in reviewed sheet; no extra visual exclusion. Screen is not exhaustive.",
+  "preflight_to_main_code_changes": "GPU training/sampling logic unchanged. Added conservative source-bound training-image exclusion, per-run metadata persistence, evidence auditing and reporting."
+}

@@ -1,0 +1,228 @@
+{
+  "selected": {
+    "AdamW": {
+      "optimizer": "AdamW",
+      "lr0": 0.0003,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "MuSGD": {
+      "optimizer": "MuSGD",
+      "lr0": 0.003,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "SGD": {
+      "optimizer": "SGD",
+      "lr0": 0.003,
+      "momentum": 0.9,
+      "weight_decay": 0.0
+    }
+  },
+  "diagnostics": {
+    "AdamW": {
+      "ranked": [
+        {
+          "candidate_id": "eb609f942ee0",
+          "hyperparameters": {
+            "optimizer": "AdamW",
+            "lr0": 0.0003,
+            "momentum": 0.9,
+            "weight_decay": 0.0005
+          },
+          "mean_anchor_val_map": 0.7778696404142218
+        },
+        {
+          "candidate_id": "7555534c5a8e",
+          "hyperparameters": {
+            "optimizer": "AdamW",
+            "lr0": 0.0003,
+            "momentum": 0.9,
+            "weight_decay": 0.0
+          },
+          "mean_anchor_val_map": 0.7661279641494985
+        },
+        {
+          "candidate_id": "1543a592cd37",
+          "hyperparameters": {
+            "optimizer": "AdamW",
+            "lr0": 0.001,
+            "momentum": 0.9,
+            "weight_decay": 0.0
+          },
+          "mean_anchor_val_map": 0.7156664712824967
+        },
+        {
+          "candidate_id": "a54004a2c417",
+          "hyperparameters": {
+            "optimizer": "AdamW",
+            "lr0": 0.001,
+            "momentum": 0.9,
+            "weight_decay": 0.0005
+          },
+          "mean_anchor_val_map": 0.7137647210968419
+        },
+        {
+          "candidate_id": "84fae146d963",
+          "hyperparameters": {
+            "optimizer": "AdamW",
+            "lr0": 0.003,
+            "momentum": 0.9,
+            "weight_decay": 0.0005
+          },
+          "mean_anchor_val_map": 0.45856027398738025
+        },
+        {
+          "candidate_id": "3a07159f60a4",
+          "hyperparameters": {
+            "optimizer": "AdamW",
+            "lr0": 0.003,
+            "momentum": 0.9,
+            "weight_decay": 0.0
+          },
+          "mean_anchor_val_map": 0.4380522295404367
+        }
+      ],
+      "selection_margin_ap_points": 1.1741676264723333,
+      "tried_candidates": 6,
+      "valid_candidates": 6
+    },
+    "MuSGD": {
+      "ranked": [
+        {
+          "candidate_id": "d4ffe71ced46",
+          "hyperparameters": {
+            "optimizer": "MuSGD",
+            "lr0": 0.003,
+            "momentum": 0.9,
+            "weight_decay": 0.0005
+          },
+          "mean_anchor_val_map": 0.7788370106059557
+        },
+        {
+          "candidate_id": "eddb709374b2",
+          "hyperparameters": {
+            "optimizer": "MuSGD",
+            "lr0": 0.003,
+            "momentum": 0.9,
+            "weight_decay": 0.0
+          },
+          "mean_anchor_val_map": 0.7741978751025254
+        },
+        {
+          "candidate_id": "ba12245969f5",
+          "hyperparameters": {
+            "optimizer": "MuSGD",
+            "lr0": 0.01,
+            "momentum": 0.9,
+            "weight_decay": 0.0
+          },
+          "mean_anchor_val_map": 0.7058641179474341
+        },
+        {
+          "candidate_id": "34a1743a1cd9",
+          "hyperparameters": {
+            "optimizer": "MuSGD",
+            "lr0": 0.01,
+            "momentum": 0.9,
+            "weight_decay": 0.0005
+          },
+          "mean_anchor_val_map": 0.7014966492199453
+        },
+        {
+          "candidate_id": "77d398fe1ac2",
+          "hyperparameters": {
+            "optimizer": "MuSGD",
+            "lr0": 0.03,
+            "momentum": 0.9,
+            "weight_decay": 0.0005
+          },
+          "mean_anchor_val_map": 0.3537144861118887
+        },
+        {
+          "candidate_id": "62e5c47f3a75",
+          "hyperparameters": {
+            "optimizer": "MuSGD",
+            "lr0": 0.03,
+            "momentum": 0.9,
+            "weight_decay": 0.0
+          },
+          "mean_anchor_val_map": 0.2591399398821035
+        }
+      ],
+      "selection_margin_ap_points": 0.4639135503430314,
+      "tried_candidates": 6,
+      "valid_candidates": 6
+    },
+    "SGD": {
+      "ranked": [
+        {
+          "candidate_id": "27eba7320c25",
+          "hyperparameters": {
+            "optimizer": "SGD",
+            "lr0": 0.003,
+            "momentum": 0.9,
+            "weight_decay": 0.0
+          },
+          "mean_anchor_val_map": 0.7865931805383524
+        },
+        {
+          "candidate_id": "4b6e48b45621",
+          "hyperparameters": {
+            "optimizer": "SGD",
+            "lr0": 0.003,
+            "momentum": 0.9,
+            "weight_decay": 0.0005
+          },
+          "mean_anchor_val_map": 0.7774796572838193
+        },
+        {
+          "candidate_id": "12d5e422d264",
+          "hyperparameters": {
+            "optimizer": "SGD",
+            "lr0": 0.01,
+            "momentum": 0.9,
+            "weight_decay": 0.0
+          },
+          "mean_anchor_val_map": 0.7484361984924495
+        },
+        {
+          "candidate_id": "7beee6af13ee",
+          "hyperparameters": {
+            "optimizer": "SGD",
+            "lr0": 0.01,
+            "momentum": 0.9,
+            "weight_decay": 0.0005
+          },
+          "mean_anchor_val_map": 0.7315808944075719
+        },
+        {
+          "candidate_id": "96be94f087f4",
+          "hyperparameters": {
+            "optimizer": "SGD",
+            "lr0": 0.03,
+            "momentum": 0.9,
+            "weight_decay": 0.0
+          },
+          "mean_anchor_val_map": 0.49758357707873224
+        },
+        {
+          "candidate_id": "71f348f7fc67",
+          "hyperparameters": {
+            "optimizer": "SGD",
+            "lr0": 0.03,
+            "momentum": 0.9,
+            "weight_decay": 0.0005
+          },
+          "mean_anchor_val_map": 0.46732040443085987
+        }
+      ],
+      "selection_margin_ap_points": 0.9113523254533074,
+      "tried_candidates": 6,
+      "valid_candidates": 6
+    }
+  },
+  "selection_split": "wildlife validation anchors only",
+  "frozen_utc": "2026-10-25T01:39:19.857693+00:00",
+  "boundary_extension_triggered": true
+}

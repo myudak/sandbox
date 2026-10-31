@@ -1,0 +1,12 @@
+{
+  "status": "passed_numeric_recalculation",
+  "checked_summaries": 70,
+  "training_rows": 120,
+  "test_rows": 60,
+  "freeze_plan_links": "passed",
+  "csv_json_agreement": "passed",
+  "t_interval_arithmetic": "passed",
+  "results_sha256": "718355cfdc205bb7652a79d57e517231c8b155baaf01de3397a6b3a5693ca8c6",
+  "test_results_sha256": "ff35c416c73dfea05144e6e487b055b8afab34dcb335d273fc9d0dc37e0ed240",
+  "scope": "Recorded metrics and three-block paired statistics; independent source-image/checkpoint byte rehashing is outside compact evidence audit."
+}

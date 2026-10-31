@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-31",
+  "test_evaluated": true,
+  "jobs": [
+    {
+      "kernel": "myudak/muon-yolo-smoke",
+      "version": 1,
+      "status": "error",
+      "role": "source integrity preflight",
+      "evidence": "outputs/kaggle_smoke_v1",
+      "manifest_sha256": "beae4157dadaf5cbb03c0937291cefe3c5d520a0901785bf3b6a31a7bbbdb059",
+      "code_sha256": "a585414a32b9b0b6f86c14800dcf3ac1f81da3937f76be3f84b8a67f2110ef64",
+      "split_policy": "strict original source",
+      "planned_runs": 2
+    },
+    {
+      "kernel": "myudak/muon-yolo-smoke",
+      "version": 2,
+      "status": "completed",
+      "role": "superseded exact-hash-only smoke",
+      "evidence": "outputs/kaggle_smoke_v2",
+      "manifest_sha256": "6299fe8d284d23ecb3ecd1d291614e985984d37fc7d39776fa459906e80a8530",
+      "code_sha256": "055694e78fe9bea2db96380ffaebc7d1c810767419c7c4d91d6d66841b59ea36",
+      "split_policy": "holdout_priority_v1",
+      "planned_runs": 2
+    },
+    {
+      "kernel": "myudak/muon-yolo-smoke",
+      "version": 3,
+      "status": "completed",
+      "role": "reviewed split smoke",
+      "evidence": "outputs/kaggle_smoke_v3",
+      "manifest_sha256": "14ef16c1f3200f7e72712c0fe0dac68d2ef83bf24b6576e8ca2b0541c61da77f",
+      "code_sha256": "476d3beb45098935c2c643b97c73a7ef61774cbf0817b50b648379110f08331c",
+      "split_policy": "holdout_priority_reviewed_v2",
+      "planned_runs": 2
+    },
+    {
+      "kernel": "myudak/muon-yolo-smoke",
+      "version": 4,
+      "status": "completed",
+      "role": "current smoke including loader exposure safeguards",
+      "evidence": "outputs/kaggle_smoke_v4",
+      "manifest_sha256": "63735f7ed7377cc3ee60616d7bd39412b937e39c029f919533be2d6b30ab512e",
+      "code_sha256": "ee66b4fe84329babe32713f88080320354ac906fff2a39d1ea50e607e3ea7466",
+      "split_policy": "holdout_priority_reviewed_v2",
+      "planned_runs": 2
+    },
+    {
+      "kernel": "myudak/muon-yolo-pilot",
+      "version": 1,
+      "status": "completed",
+      "role": "superseded split/warmup development pilot",
+      "evidence": "outputs/kaggle_pilot_superseded_v1",
+      "manifest_sha256": "3f2174786eccf2781988f0a796e6db4f1bcedf6d158ec94ff90444ef0bac63c3",
+      "code_sha256": "055694e78fe9bea2db96380ffaebc7d1c810767419c7c4d91d6d66841b59ea36",
+      "split_policy": "holdout_priority_v1",
+      "planned_runs": 8
+    },
+    {
+      "kernel": "myudak/muon-yolo-pilot-reviewed",
+      "version": 1,
+      "status": "completed",
+      "role": "current reviewed split development pilot",
+      "evidence": "outputs/kaggle_pilot_reviewed_v1",
+      "manifest_sha256": "7f3c8c1754d7652bcb80ed3454d7a97fa60b4675c9ed1f228f381902c2ec45ae",
+      "code_sha256": "ee66b4fe84329babe32713f88080320354ac906fff2a39d1ea50e607e3ea7466",
+      "split_policy": "holdout_priority_reviewed_v2",
+      "planned_runs": 8,
+      "completed_runs": 8
+    },
+    {
+      "kernel": "myudak/muon-yolo-journal-preflight",
+      "version": 1,
+      "cap_seconds": 1200,
+      "state": "completed",
+      "reserved_utc": "2026-10-24T22:36:26.368315+00:00",
+      "plan_sha256": "bc6997499d984863ae97c35174bf4ea2b348ec31f631bb6fae2fa71c460e1b41",
+      "bundle_sha256": "a52de7ffd0801d413871516074d7aa08e53f94aac4bed22fa0404a13c9d5f288",
+      "completed_runs": 6,
+      "reported_execution_seconds": 260.251105067,
+      "evidence": "outputs/kaggle_journal_preflight_v1",
+      "evidence_audit": "passed",
+      "role": "journal GPU/exposure and two-dataset preflight",
+      "status": "completed",
+      "test_evaluated": false
+    },
+    {
+      "kernel": "myudak/muon-yolo-journal",
+      "version": 1,
+      "cap_seconds": 42000,
+      "state": "completed",
+      "reserved_utc": "2026-10-24T22:47:15.130423+00:00",
+      "plan_sha256": "11843465a5aade73e250cf534d0b00d60ad53351c16ae382a3300ef213f0321d",
+      "notebook_sha256": "c6e3f11c34e1145660667753f5e705aa979a12296622629e83b05538a659212b",
+      "code_sha256": "217520ec98348e5a74500ac4efb9a3c1188580e76a8a48ff0c16d0bc12889d46",
+      "submission_output": "Warning: Looks like you're using an outdated `kaggle` version (installed: 2.0.2), please consider upgrading to the latest version (2.2.5)\nKernel version 1 successfully pushed.  Please check progress at https://www.kaggle.com/code/myudak/muon-yolo-journal\n",
+      "role": "journal fixed-exposure tuning, paired confirmation and external transfer",
+      "status": "completed",
+      "test_evaluated": true,
+      "completed_runs": 120,
+      "test_evaluations": 60,
+      "evidence": "outputs/kaggle_journal_v1",
+      "reported_execution_seconds": 36859.902047801996,
+      "evidence_audit": "passed",
+      "completed_manifest_utc": "2026-10-25T09:01:59.146555+00:00"
+    }
+  ]
+}

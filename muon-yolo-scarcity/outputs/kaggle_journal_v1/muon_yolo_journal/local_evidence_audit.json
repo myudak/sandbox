@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": "Plan, code/spec, data/variant identities, finite histories, actual exposure/steps, optimizer identity, paired order/initialization and final-test freeze linkage",
+  "manifest_status": "completed",
+  "training_rows": 120,
+  "completed_training_rows": 120,
+  "test_rows": 60,
+  "test_evaluated": true,
+  "results_file_sha256": "f9fab2e14fc0045f11c6ca491b16fc9b78ece0998b5d93485a3cd6e7cd4edf91",
+  "limits": "Compact evidence audit verifies recorded hashes and internal consistency. Source image bytes and saved checkpoint bytes require separate retrieval to independently rehash."
+}

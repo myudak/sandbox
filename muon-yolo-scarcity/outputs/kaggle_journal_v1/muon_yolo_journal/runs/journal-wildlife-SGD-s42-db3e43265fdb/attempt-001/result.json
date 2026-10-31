@@ -1,0 +1,112 @@
+{
+  "run_id": "journal-wildlife-SGD-s42-db3e43265fdb",
+  "attempt": 1,
+  "status": "completed",
+  "started_utc": "2026-10-24T23:50:28.476428+00:00",
+  "optimizer": "SGD",
+  "seed": 42,
+  "data_fraction": 1.0,
+  "noise_probability": 0.0,
+  "realized_noise_rate": 0.0,
+  "variant_fingerprint": "f4eca61714d60e3a6c97de45bd824fb82263044fc4d5fe666bb05259a831e905",
+  "train_images": 1020,
+  "epochs_budget": 20,
+  "test_evaluated": false,
+  "spec_sha256": "db3e43265fdbbc527045de5ce033ea47953cea78f97467a3478c2b40d5daa63d",
+  "actual_train_images": 1020,
+  "optimizer_details": {
+    "class": "SGD",
+    "groups": [
+      {
+        "parameters": 2515728,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "dampening": 0,
+        "maximize": false,
+        "foreach": null,
+        "differentiable": false,
+        "fused": null,
+        "initial_lr": 0.01
+      },
+      {
+        "parameters": 9784,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "dampening": 0,
+        "maximize": false,
+        "foreach": null,
+        "differentiable": false,
+        "fused": null,
+        "initial_lr": 0.01
+      },
+      {
+        "parameters": 9832,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "param_group": "bias",
+        "dampening": 0,
+        "weight_decay": 0,
+        "maximize": false,
+        "foreach": null,
+        "differentiable": false,
+        "fused": null,
+        "initial_lr": 0.01
+      }
+    ],
+    "muon_factor": null,
+    "sgd_factor": null
+  },
+  "initial_model_state_sha256": "111da1631eb4bf77119eb03027af923422e35187cf064187db2f22fe8f0409e6",
+  "training_seconds": 311.6054353319996,
+  "training_peak_vram_bytes": 2950286336,
+  "optimizer_steps": 1280,
+  "epochs_completed": 20,
+  "images_seen": 20480,
+  "sampling": {
+    "mode": "shuffled_cyclic_stream_v1",
+    "samples_per_epoch": 1024,
+    "musgd_head_lr_multiplier": 3.0
+  },
+  "samples_per_epoch": 1024,
+  "exposure_order_sha256": "02d82c72ef55eabb48f5b45abb6fe56ee20b74c987a725a6f6eef4e47ace2fb7",
+  "best_validation_epoch": 20,
+  "best_validation_map50_95": 0.79842,
+  "best_weights": "/kaggle/working/muon_yolo_journal/runs/journal-wildlife-SGD-s42-db3e43265fdb/attempt-001/train/weights/best.pt",
+  "best_weights_sha256": "e4d1c937b84837aa6246c11234fb1911ee1078ca0eedf4358dad8ca56c89daaa",
+  "validation_seconds": 1.4203101080001943,
+  "val_map50_95": 0.798144238344396,
+  "val_map50": 0.9449088697160021,
+  "val_precision": 0.9509424246233837,
+  "val_recall": 0.8743272144017098,
+  "val_per_class_map50_95": [
+    0.8138228939152578,
+    0.783496554033896,
+    0.8360951528184536,
+    0.7591623526099767
+  ],
+  "lr0": 0.01,
+  "finished_utc": "2026-10-24T23:55:41.660552+00:00",
+  "run_call_seconds": 313.1832067759997,
+  "dataset": "wildlife",
+  "subset_seed": 2026,
+  "corruption_seed": 2027,
+  "hyperparameters": {
+    "optimizer": "SGD",
+    "lr0": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "candidate_id": "7beee6af13ee",
+  "roles": [
+    "fixed_exposure_defaults"
+  ],
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "source_fingerprint": "a2268d1ed873b662a32dc1dd134c73f6a70c1b60f1477d18ec82ed33bba8ba99"
+}

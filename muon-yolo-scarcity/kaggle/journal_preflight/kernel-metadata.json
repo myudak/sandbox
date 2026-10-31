@@ -1,0 +1,15 @@
+{
+  "id": "myudak/muon-yolo-journal-preflight",
+  "title": "Muon Yolo Journal Preflight",
+  "code_file": "muon_yolo_journal_preflight.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,12 @@
+# Uses the same explicit controls as smoke; overrides are merged by load_config.
+extends: smoke.yaml
+study: pilot
+fractions: [0.20, 1.00]
+noise_levels: [0.00, 0.20]
+train:
+  epochs: 20
+  imgsz: 512
+  batch: 16
+  nbs: 16
+  # Avoid Ultralytics' 100-iteration minimum changing warmup epochs by fraction.
+  warmup_epochs: 0.0

@@ -1,0 +1,141 @@
+{
+  "schema": "journal-campaign-v1",
+  "target": "Journal; scope and venue remain conditional on evidence",
+  "authorized_additional_notebook_seconds": 43200,
+  "runtime_definition": "Sum of additional Kaggle notebook session runtime caps, including setup; not device-hours. Prior completed pilot excluded.",
+  "compute_location": "Kaggle only; one T4 device used per notebook",
+  "preflight_cap_seconds": 1200,
+  "main_cap_seconds": 42000,
+  "test_reserve_seconds": 1800,
+  "checkpoint": "yolo26n.pt",
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "library": "ultralytics==8.4.187",
+  "primary_estimand": "Fine-tuning recipe differences in clean mAP50-95 across image availability and independent missing-box probability, at fixed image exposures and optimizer updates",
+  "primary_exposure": {
+    "blocks": 20,
+    "samples_per_block": 1024,
+    "batch": 16,
+    "images_seen": 20480,
+    "optimizer_updates": 1280,
+    "warmup": 0,
+    "accumulation": 1
+  },
+  "sampling": "Continuous deterministic shuffled cyclic stream; epoch boundaries only define schedule and validation events. Actual ordered image hashes checked between paired optimizers.",
+  "conditions": {
+    "fractions": [
+      0.2,
+      1.0
+    ],
+    "missing_box_probabilities": [
+      0.0,
+      0.2
+    ]
+  },
+  "validation": "Clean held-out wildlife split and 512 deterministic VOC2007 official-validation images; no test scores used in tuning",
+  "voc_policy": "Official 2007 train/val/test membership. All difficult objects retained with inclusive-coordinate conversion; controlled VOC-derived mAP50-95, not official VOC AP.",
+  "deduplication": {
+    "priority": [
+      "test",
+      "val",
+      "train"
+    ],
+    "wildlife_reviewed_manifest": "configs/duplicate_exclusions.json",
+    "additional_rule": {
+      "dhash_distance_at_most": 6,
+      "normalized_32px_rgb_mae_at_most": 0.025,
+      "relative_aspect_difference_at_most": 0.05
+    },
+    "test_membership": "unchanged",
+    "scope": "Conservative cross-split image screen; not an exhaustive scene/entity audit",
+    "additional_visual_review_manifest": "configs/journal_duplicate_exclusions.json",
+    "additional_visual_review_sha256": "2317d220a17a7a6ed33ea3782ec012a41f9ea91c5e6982aadf2653c1bc4dd02b",
+    "review_chronology": "One additional likely same-scene wildlife training image excluded after preflight input review, before main submission; pilot remains unchanged."
+  },
+  "default_controls": "AdamW and MuSGD variable rounded exposure vs fixed exposure, plus fixed-exposure SGD; one development block; descriptive only",
+  "tuning": {
+    "blocks": 10,
+    "samples_per_block": 1024,
+    "optimizer_candidates_each": 6,
+    "anchors": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.2
+      ]
+    ],
+    "lr_grid": {
+      "AdamW": [
+        0.0003,
+        0.001,
+        0.003
+      ],
+      "MuSGD": [
+        0.003,
+        0.01,
+        0.03
+      ],
+      "SGD": [
+        0.003,
+        0.01,
+        0.03
+      ]
+    },
+    "weight_decay_grid": [
+      0.0,
+      0.0005
+    ],
+    "training_seed": 11,
+    "subset_seed": 2026,
+    "corruption_seed": 2027,
+    "selection": "One global setting per optimizer maximizing mean clean-validation anchor mAP; ties lower LR then lower decay",
+    "schedule_transfer": "10-block-selected settings transferred to 20/60 blocks without retuning",
+    "boundary_extension": "If any selected LR is on its boundary and mandatory confirmation time remains, add two candidates per optimizer on two anchors at 10 blocks. Extend high if best is high; otherwise extend low. Equal candidate budgets, all failures retained."
+  },
+  "confirmation": {
+    "wildlife_optimizers": [
+      "AdamW",
+      "MuSGD",
+      "SGD"
+    ],
+    "voc_transfer_optimizers": [
+      "AdamW",
+      "MuSGD"
+    ],
+    "required_joint_blocks": [
+      101,
+      102,
+      103
+    ],
+    "training_seed": "block",
+    "subset_seed": "3000+block",
+    "corruption_seed": "4000+block",
+    "voc_tuning": "None; transfer wildlife-selected settings",
+    "optional_primary_blocks": [
+      104,
+      105
+    ]
+  },
+  "optional_priority": [
+    "60-block wildlife AdamW/MuSGD at q=0.2, both fractions, block 101",
+    "MuSGD 1x head LR ablation, four cells, block 101; selected LR transferred",
+    "complete wildlife joint block 104",
+    "complete wildlife joint block 105"
+  ],
+  "final_test": "Open only after both datasets complete all three required joint blocks and no attempted confirmation block is incomplete. Freeze checkpoint bytes, identities and settings before scoring. Evaluate all selected complete confirmation cells once; record all failures and partial evaluations. No retuning after test access.",
+  "analysis": "Paired block contrasts and three-way difference-in-differences in AP points, approximate Student t 95% intervals across joint blocks. At n=3 intervals are weak; exploratory cell comparisons without multiplicity claims. No image-level bootstrap inference from block intervals.",
+  "limitations": [
+    "Recipe comparison includes optimizer-specific grouping, native precision and head LR multiplier",
+    "One pretrained checkpoint lineage; possible training-image overlap unresolved",
+    "Short fixed-update budget does not establish convergence",
+    "Tuning at one development block and shorter horizon may transfer imperfectly",
+    "Dataset rights must be resolved before image redistribution",
+    "Targeted prior-art search is not exhaustive"
+  ],
+  "expected_dataset_fingerprints": {
+    "wildlife": "a2268d1ed873b662a32dc1dd134c73f6a70c1b60f1477d18ec82ed33bba8ba99",
+    "voc2007": "54f9a72afcc5db8615e63df1096eb12b798b259df6757251c1d8df04d9b2a299"
+  }
+}

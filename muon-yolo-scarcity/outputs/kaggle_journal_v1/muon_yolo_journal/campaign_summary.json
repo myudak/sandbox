@@ -1,0 +1,1271 @@
+{
+  "input_results_sha256": "718355cfdc205bb7652a79d57e517231c8b155baaf01de3397a6b3a5693ca8c6",
+  "status": "completed",
+  "attempted_runs": 120,
+  "failed_runs": [],
+  "incomplete_confirmation_blocks": [],
+  "skipped": [
+    "Equal-budget boundary extension: insufficient time",
+    "Optional primary block 104: insufficient reserved time",
+    "Optional primary block 105: insufficient reserved time"
+  ],
+  "validation": {
+    "wildlife": {
+      "metric": "val_map50_95",
+      "units": "AP points (100 times mAP)",
+      "joint_blocks": [
+        101,
+        102,
+        103
+      ],
+      "interval_method": "Student t interval across independent paired joint training/subset/corruption blocks; approximate at small n; no multiplicity adjustment",
+      "conditions": [
+        {
+          "optimizer": "AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 77.16149583578266,
+          "sd": 1.386617757407881,
+          "ci95": [
+            73.71694637286576,
+            80.60604529869956
+          ],
+          "values": [
+            77.99847787534947,
+            77.92508121126345,
+            75.56092842073505
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 76.45201628342387,
+          "sd": 0.4296945048000814,
+          "ci95": [
+            75.38459595953134,
+            77.51943660731641
+          ],
+          "values": [
+            76.89810727304301,
+            76.04084984562589,
+            76.41709173160274
+          ]
+        },
+        {
+          "optimizer": "SGD",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 77.88202457327709,
+          "sd": 0.1882207193354869,
+          "ci95": [
+            77.41445838624882,
+            78.34959076030536
+          ],
+          "values": [
+            77.66527689083249,
+            78.0042681947189,
+            77.97652863427989
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 72.92866444827824,
+          "sd": 0.6651481307613413,
+          "ci95": [
+            71.27634489277423,
+            74.58098400378225
+          ],
+          "values": [
+            73.44201047074046,
+            72.17724005324717,
+            73.16674282084709
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 71.56146565267052,
+          "sd": 0.20142737045036715,
+          "ci95": [
+            71.06109232556226,
+            72.06183897977878
+          ],
+          "values": [
+            71.33315517845486,
+            71.63716661707541,
+            71.71407516248131
+          ]
+        },
+        {
+          "optimizer": "SGD",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 72.93530370421217,
+          "sd": 0.9113140957449326,
+          "ci95": [
+            70.67147399175059,
+            75.19913341667376
+          ],
+          "values": [
+            73.96286171193803,
+            72.61795989748116,
+            72.22508950321733
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 82.17500832636675,
+          "sd": 0.47026008931852414,
+          "ci95": [
+            81.00681750417401,
+            83.34319914855949
+          ],
+          "values": [
+            82.49851882530577,
+            82.39094378291611,
+            81.63556237087836
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 82.00030787178346,
+          "sd": 0.22039010450970412,
+          "ci95": [
+            81.4528285018811,
+            82.54778724168582
+          ],
+          "values": [
+            81.92917754111913,
+            82.24747916937669,
+            81.82426690485457
+          ]
+        },
+        {
+          "optimizer": "SGD",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 82.8391431542353,
+          "sd": 1.1723165954050472,
+          "ci95": [
+            79.92694728951496,
+            85.75133901895565
+          ],
+          "values": [
+            82.94324319084485,
+            83.95593811566286,
+            81.61824815619818
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 79.27793334818742,
+          "sd": 0.603436757018327,
+          "ci95": [
+            77.77891334344045,
+            80.77695335293438
+          ],
+          "values": [
+            79.91070828730554,
+            78.70889428643302,
+            79.21419747082368
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 79.89605614621063,
+          "sd": 0.4599875894611068,
+          "ci95": [
+            78.75338362830732,
+            81.03872866411393
+          ],
+          "values": [
+            80.2824503085391,
+            79.38724340328814,
+            80.01847472680464
+          ]
+        },
+        {
+          "optimizer": "SGD",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 80.26657159763963,
+          "sd": 0.7242835907507483,
+          "ci95": [
+            78.46735141587605,
+            82.0657917794032
+          ],
+          "values": [
+            80.93517206366853,
+            80.36737684890485,
+            79.4971658803455
+          ]
+        }
+      ],
+      "paired_optimizer_contrasts": [
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": -0.709479552358779,
+          "sd": 1.4113956232932992,
+          "ci95": [
+            -4.215580646337577,
+            2.796621541620019
+          ],
+          "values": [
+            -1.1003706023064552,
+            -1.8842313656375675,
+            0.8561633108676858
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 0.7205287374944414,
+          "sd": 1.4823853887305578,
+          "ci95": [
+            -2.961920709953176,
+            4.402978184942059
+          ],
+          "values": [
+            -0.3332009845169681,
+            0.07918698345545927,
+            2.415600213544833
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": -1.3671987956077158,
+          "sd": 0.787875512307534,
+          "ci95": [
+            -3.324390067871218,
+            0.5899924766557865
+          ],
+          "values": [
+            -2.108855292285594,
+            -0.5400734361717618,
+            -1.4526676583657916
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 0.006639255933930481,
+          "sd": 0.8222222108419818,
+          "ci95": [
+            -2.0358739454320562,
+            2.049152457299917
+          ],
+          "values": [
+            0.520851241197573,
+            0.44071984423398325,
+            -0.9416533176297648
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": -0.17470045458328384,
+          "sd": 0.37998700495258564,
+          "ci95": [
+            -1.1186405035493636,
+            0.769239594382796
+          ],
+          "values": [
+            -0.5693412841866419,
+            -0.14346461353942352,
+            0.1887045339762139
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 0.6641348278685529,
+          "sd": 0.8136527502871232,
+          "ci95": [
+            -1.3570906533640166,
+            2.6853603091011227
+          ],
+          "values": [
+            0.44472436553908423,
+            1.5649943327467497,
+            -0.017314214680175244
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 0.6181227980232166,
+          "sd": 0.2224681762287064,
+          "ci95": [
+            0.06548121179601718,
+            1.170764384250416
+          ],
+          "values": [
+            0.3717420212335676,
+            0.6783491168551259,
+            0.8042772559809563
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 0.9886382494522191,
+          "sd": 0.688456532778416,
+          "ci95": [
+            -0.7215825865023276,
+            2.698859085406766
+          ],
+          "values": [
+            1.0244637763629938,
+            1.6584825624718413,
+            0.2829684095218221
+          ]
+        }
+      ],
+      "three_way_interactions": [
+        {
+          "contrast": "MuSGD minus AdamW: scarcity x missing-box interaction",
+          "n_joint_blocks": 3,
+          "mean": -1.4505424958554374,
+          "sd": 1.776735093291764,
+          "ci95": [
+            -5.864197144837054,
+            2.96311215312618
+          ],
+          "values": [
+            -1.9495679953993483,
+            0.5223441990712563,
+            -2.92440369123822
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW: scarcity x missing-box interaction",
+          "n_joint_blocks": 3,
+          "mean": -1.038392903144177,
+          "sd": 2.2682467578105583,
+          "ci95": [
+            -6.673030213706976,
+            4.596244407418622
+          ],
+          "values": [
+            0.27431281489063153,
+            0.26804463105343235,
+            -3.657536155376595
+          ]
+        }
+      ]
+    },
+    "voc2007": {
+      "metric": "val_map50_95",
+      "units": "AP points (100 times mAP)",
+      "joint_blocks": [
+        101,
+        102,
+        103
+      ],
+      "interval_method": "Student t interval across independent paired joint training/subset/corruption blocks; approximate at small n; no multiplicity adjustment",
+      "conditions": [
+        {
+          "optimizer": "AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 47.74337917701948,
+          "sd": 0.09624518437333424,
+          "ci95": [
+            47.504292884946274,
+            47.98246546909268
+          ],
+          "values": [
+            47.76468094996794,
+            47.638267656591225,
+            47.827188924499275
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 49.52854240739748,
+          "sd": 0.6541664856968906,
+          "ci95": [
+            47.90350277053479,
+            51.15358204426017
+          ],
+          "values": [
+            49.81167078270657,
+            49.99345372075691,
+            48.78050271872897
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 43.743325730375865,
+          "sd": 0.4111986932904111,
+          "ci95": [
+            42.72185154936336,
+            44.76479991138837
+          ],
+          "values": [
+            43.30643073896972,
+            43.80075633185069,
+            44.12279012030719
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 45.22410963012578,
+          "sd": 0.21118855146676002,
+          "ci95": [
+            44.69948818514378,
+            45.748731075107784
+          ],
+          "values": [
+            45.13910459749563,
+            45.46455459411514,
+            45.06866969876656
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 54.88750378940945,
+          "sd": 0.6662278822352445,
+          "ci95": [
+            53.232501982549834,
+            56.542505596269066
+          ],
+          "values": [
+            55.28173070993662,
+            55.262490357476935,
+            54.1182903008148
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 55.63188703185454,
+          "sd": 0.223275526688147,
+          "ci95": [
+            55.07723987590447,
+            56.18653418780461
+          ],
+          "values": [
+            55.87531652361157,
+            55.43662962675667,
+            55.58371494519538
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 52.98585588628073,
+          "sd": 0.2987889422879875,
+          "ci95": [
+            52.243623006898346,
+            53.72808876566312
+          ],
+          "values": [
+            53.108653329966145,
+            52.645234273360266,
+            53.203680055515775
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 54.62464854094018,
+          "sd": 0.7980694417992218,
+          "ci95": [
+            52.64213414399576,
+            56.607162937884596
+          ],
+          "values": [
+            54.84946277803536,
+            55.286197979980415,
+            53.738284864804754
+          ]
+        }
+      ],
+      "paired_optimizer_contrasts": [
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 1.7851632303780007,
+          "sd": 0.7366996284658033,
+          "ci95": [
+            -0.044900098903679186,
+            3.6152265596596806
+          ],
+          "values": [
+            2.0469898327386273,
+            2.355186064165682,
+            0.9533137942296932
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 1.48078389974991,
+          "sd": 0.47087335500602745,
+          "ci95": [
+            0.3110696411355318,
+            2.6504981583642886
+          ],
+          "values": [
+            1.8326738585259073,
+            1.6637982622644487,
+            0.9458795784593743
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 0.7443832424450939,
+          "sd": 0.6587179809145168,
+          "ci95": [
+            -0.8919629353324136,
+            2.3807294202226013
+          ],
+          "values": [
+            0.5935858136749572,
+            0.17413926927973833,
+            1.4654246443805863
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 1.6387926546594451,
+          "sd": 1.0568786688616425,
+          "ci95": [
+            -0.9866395033717146,
+            4.264224812690605
+          ],
+          "values": [
+            1.7408094480692138,
+            2.6409637066201475,
+            0.5346048092889744
+          ]
+        }
+      ],
+      "three_way_interactions": [
+        {
+          "contrast": "MuSGD minus AdamW: scarcity x missing-box interaction",
+          "n_joint_blocks": 3,
+          "mean": -1.198788742842442,
+          "sd": 2.0456603219954954,
+          "ci95": [
+            -6.280490694079802,
+            3.8829132083949176
+          ],
+          "values": [
+            -1.3615396086069764,
+            -3.1582122392416423,
+            0.923385619321293
+          ]
+        }
+      ]
+    }
+  },
+  "frozen_test": {
+    "wildlife": {
+      "metric": "test_map50_95",
+      "units": "AP points (100 times mAP)",
+      "joint_blocks": [
+        101,
+        102,
+        103
+      ],
+      "interval_method": "Student t interval across independent paired joint training/subset/corruption blocks; approximate at small n; no multiplicity adjustment",
+      "conditions": [
+        {
+          "optimizer": "AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 80.29947577580687,
+          "sd": 0.34497127036422065,
+          "ci95": [
+            79.44251963363531,
+            81.15643191797842
+          ],
+          "values": [
+            80.54489559055409,
+            79.90504539943288,
+            80.44848633743362
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 81.08452218056165,
+          "sd": 0.8976259612694601,
+          "ci95": [
+            78.85469567915368,
+            83.31434868196962
+          ],
+          "values": [
+            81.94562328945827,
+            80.15436075099383,
+            81.15358250123286
+          ]
+        },
+        {
+          "optimizer": "SGD",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 81.1696383600305,
+          "sd": 0.959791566174579,
+          "ci95": [
+            78.78538393510587,
+            83.55389278495514
+          ],
+          "values": [
+            81.71816992810189,
+            80.06138535209884,
+            81.72935979989079
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 74.86457082521181,
+          "sd": 0.979026674732429,
+          "ci95": [
+            72.4325337417296,
+            77.29660790869403
+          ],
+          "values": [
+            74.83585436748055,
+            73.9002182931122,
+            75.85763981504269
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 75.12339271437406,
+          "sd": 0.7715779111171595,
+          "ci95": [
+            73.20668692783813,
+            77.04009850090999
+          ],
+          "values": [
+            74.90712790199352,
+            74.48302353665257,
+            75.9800267044761
+          ]
+        },
+        {
+          "optimizer": "SGD",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 77.59442339380199,
+          "sd": 1.0230511849770723,
+          "ci95": [
+            75.05302336418107,
+            80.1358234234229
+          ],
+          "values": [
+            78.48689191115798,
+            76.47792151228272,
+            77.81845675796525
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 84.31724622109735,
+          "sd": 0.9944757224485091,
+          "ci95": [
+            81.84683157557346,
+            86.78766086662124
+          ],
+          "values": [
+            84.73258556376398,
+            85.03672372544028,
+            83.1824293740878
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 85.06198287665163,
+          "sd": 0.210401848153566,
+          "ci95": [
+            84.53931571103786,
+            85.5846500422654
+          ],
+          "values": [
+            84.82554962459747,
+            85.2286084450216,
+            85.1317905603358
+          ]
+        },
+        {
+          "optimizer": "SGD",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 84.59368179035432,
+          "sd": 0.17870081160322487,
+          "ci95": [
+            84.14976436513587,
+            85.03759921557278
+          ],
+          "values": [
+            84.62908824542659,
+            84.39992809484932,
+            84.75202903078709
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 82.78273963752798,
+          "sd": 0.7798248365127248,
+          "ci95": [
+            80.84554735261119,
+            84.71993192244477
+          ],
+          "values": [
+            82.09520727940415,
+            83.63009415843432,
+            82.62291747474549
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 82.5316042508488,
+          "sd": 1.0325400486094896,
+          "ci95": [
+            79.96663257723723,
+            85.09657592446037
+          ],
+          "values": [
+            83.46094692039952,
+            81.42010944409925,
+            82.71375638804763
+          ]
+        },
+        {
+          "optimizer": "SGD",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 82.85987641201662,
+          "sd": 1.2787310287365932,
+          "ci95": [
+            79.68333244038612,
+            86.03642038364711
+          ],
+          "values": [
+            83.98426168772343,
+            81.46884642118977,
+            83.12652112713667
+          ]
+        }
+      ],
+      "paired_optimizer_contrasts": [
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 0.785046404754793,
+          "sd": 0.5798548345708977,
+          "ci95": [
+            -0.6553928571256725,
+            2.2254856666352585
+          ],
+          "values": [
+            1.4007276989041806,
+            0.24931535156096363,
+            0.7050961637992348
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 0.8701625842236438,
+          "sd": 0.6205251444649644,
+          "ci95": [
+            -0.6713073282119935,
+            2.411632496659281
+          ],
+          "values": [
+            1.1732743375478027,
+            0.15633995266596257,
+            1.280873462457166
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 0.2588218891622492,
+          "sd": 0.28173933732863177,
+          "ci95": [
+            -0.4410574235706793,
+            0.9587012018951777
+          ],
+          "values": [
+            0.07127353451297225,
+            0.582805243540363,
+            0.12238688943341236
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 2.7298525685901707,
+          "sd": 0.8553206931909593,
+          "ci95": [
+            0.6051181790204057,
+            4.854586958159936
+          ],
+          "values": [
+            3.651037543677438,
+            2.577703219170513,
+            1.9608169429225608
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 0.7447366555542789,
+          "sd": 1.0444072573204366,
+          "ci95": [
+            -1.8497147987489972,
+            3.339188109857555
+          ],
+          "values": [
+            0.09296406083350028,
+            0.19188471958132558,
+            1.949361186248011
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 0.2764355692569757,
+          "sd": 1.1512196967785957,
+          "ci95": [
+            -2.583352693985075,
+            3.136223832499026
+          ],
+          "values": [
+            -0.10349731833738662,
+            -0.6367956305909694,
+            1.5695996566992831
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": -0.2511353866791873,
+          "sd": 1.8122254227086652,
+          "ci95": [
+            -4.752952901366677,
+            4.250682128008303
+          ],
+          "values": [
+            1.365739640995367,
+            -2.209984714335067,
+            0.09083891330213811
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 0.07713677448863976,
+          "sd": 2.0585534644625403,
+          "ci95": [
+            -5.036593518173679,
+            5.1908670671509585
+          ],
+          "values": [
+            1.8890544083192906,
+            -2.1612477372445538,
+            0.5036036523911824
+          ]
+        }
+      ],
+      "three_way_interactions": [
+        {
+          "contrast": "MuSGD minus AdamW: scarcity x missing-box interaction",
+          "n_joint_blocks": 3,
+          "mean": 0.4696475266409224,
+          "sd": 2.7586031514797353,
+          "ci95": [
+            -6.383102593618275,
+            7.322397646900119
+          ],
+          "values": [
+            -2.602229744553075,
+            2.735359325895792,
+            1.2758129985800504
+          ]
+        },
+        {
+          "contrast": "SGD minus AdamW: scarcity x missing-box interaction",
+          "n_joint_blocks": 3,
+          "mean": 2.0589887791348627,
+          "sd": 1.751412208125878,
+          "ci95": [
+            -2.291760335836633,
+            6.4097378941063585
+          ],
+          "values": [
+            0.48521147947295784,
+            3.9458153731581347,
+            1.7459394847734955
+          ]
+        }
+      ]
+    },
+    "voc2007": {
+      "metric": "test_map50_95",
+      "units": "AP points (100 times mAP)",
+      "joint_blocks": [
+        101,
+        102,
+        103
+      ],
+      "interval_method": "Student t interval across independent paired joint training/subset/corruption blocks; approximate at small n; no multiplicity adjustment",
+      "conditions": [
+        {
+          "optimizer": "AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 46.59055479704567,
+          "sd": 0.20262181735083443,
+          "ci95": [
+            46.08721429934731,
+            47.09389529474403
+          ],
+          "values": [
+            46.364377780233845,
+            46.65179189596125,
+            46.755494714941904
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 48.14443844153133,
+          "sd": 0.5739828919226496,
+          "ci95": [
+            46.71858589382443,
+            49.570290989238224
+          ],
+          "values": [
+            48.657174140409666,
+            47.52436337805634,
+            48.251777806127976
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 42.18100617142262,
+          "sd": 0.604698532943073,
+          "ci95": [
+            40.67885174151724,
+            43.68316060132799
+          ],
+          "values": [
+            41.50315063810411,
+            42.374867668033936,
+            42.6650002081298
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 43.85217574483554,
+          "sd": 0.6696226921810625,
+          "ci95": [
+            42.188740762565395,
+            45.51561072710569
+          ],
+          "values": [
+            43.460094497666994,
+            43.471069271400445,
+            44.62536346543918
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 54.15226717721152,
+          "sd": 0.3191984502044687,
+          "ci95": [
+            53.35933426953616,
+            54.94520008488688
+          ],
+          "values": [
+            53.83255670376603,
+            54.15329369962265,
+            54.47095112824588
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 55.25414493664988,
+          "sd": 0.15676262255709375,
+          "ci95": [
+            54.864724994167744,
+            55.643564879132015
+          ],
+          "values": [
+            55.07799175754122,
+            55.30613741684272,
+            55.3783056355657
+          ]
+        },
+        {
+          "optimizer": "AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 52.240049180798486,
+          "sd": 0.0496349049495057,
+          "ci95": [
+            52.116749241595805,
+            52.36334912000117
+          ],
+          "values": [
+            52.220395394217846,
+            52.20325075592229,
+            52.296501392255315
+          ]
+        },
+        {
+          "optimizer": "MuSGD",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 52.97091296632983,
+          "sd": 0.5319450149092477,
+          "ci95": [
+            51.64948829423255,
+            54.29233763842711
+          ],
+          "values": [
+            52.58796136662988,
+            53.57829326615815,
+            52.74648426620146
+          ]
+        }
+      ],
+      "paired_optimizer_contrasts": [
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 1.5538836444856614,
+          "sd": 0.7118623770681863,
+          "ci95": [
+            -0.2144805319437395,
+            3.322247820915062
+          ],
+          "values": [
+            2.2927963601758194,
+            0.8725714820950914,
+            1.4962830911860736
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 0.2,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 1.6711695734129266,
+          "sd": 0.4979398035954808,
+          "ci95": [
+            0.434218529135169,
+            2.908120617690684
+          ],
+          "values": [
+            1.9569438595628874,
+            1.0962016033665145,
+            1.9603632573093777
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.0,
+          "n_joint_blocks": 3,
+          "mean": 1.1018777594383595,
+          "sd": 0.17470764325679805,
+          "ci95": [
+            0.6678799142985025,
+            1.5358756045782167
+          ],
+          "values": [
+            1.2454350537751901,
+            1.1528437172200645,
+            0.9073545073198241
+          ]
+        },
+        {
+          "contrast": "MuSGD minus AdamW",
+          "fraction": 1.0,
+          "missing_probability": 0.2,
+          "n_joint_blocks": 3,
+          "mean": 0.7308637855313475,
+          "sd": 0.559395037907978,
+          "ci95": [
+            -0.6587505238846453,
+            2.12047809494734
+          ],
+          "values": [
+            0.3675659724120317,
+            1.3750425102358577,
+            0.4499828739461531
+          ]
+        }
+      ],
+      "three_way_interactions": [
+        {
+          "contrast": "MuSGD minus AdamW: scarcity x missing-box interaction",
+          "n_joint_blocks": 3,
+          "mean": 0.48829990283427716,
+          "sd": 0.4623564944829163,
+          "ci95": [
+            -0.6602573013691855,
+            1.6368571070377398
+          ],
+          "values": [
+            0.5420165807502264,
+            0.0014313282556299711,
+            0.9214517994969751
+          ]
+        }
+      ]
+    }
+  },
+  "test_status": "completed",
+  "limitations": [
+    "Short-budget fine-tuning recipes, not isolated orthogonalization effects or convergence results.",
+    "Joint blocks vary training, subset and annotation deletion seeds together; intervals do not isolate these variance sources.",
+    "Approximate t intervals at n=3 are unstable. Cell contrasts are exploratory; no multiple-comparison claims.",
+    "One checkpoint lineage, uncertain pretrained-image overlap, and unresolved source-image rights limit generalization.",
+    "VOC-derived all-object mAP50-95 is not official VOC AP; validation uses a frozen 512-image sample.",
+    "Hyperparameters selected at 10 exposure blocks and transferred to 20/60-block schedules; tuning is not convergence-based."
+  ],
+  "incomplete_test_blocks": {
+    "wildlife": [],
+    "voc2007": []
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "run_id": "journal-wildlife-MuSGD-s42-6b446ab51f73",
+  "attempt": 1,
+  "status": "completed",
+  "started_utc": "2026-10-24T23:01:39.084378+00:00",
+  "optimizer": "MuSGD",
+  "seed": 42,
+  "data_fraction": 1.0,
+  "noise_probability": 0.0,
+  "realized_noise_rate": 0.0,
+  "variant_fingerprint": "f4eca61714d60e3a6c97de45bd824fb82263044fc4d5fe666bb05259a831e905",
+  "train_images": 1020,
+  "epochs_budget": 20,
+  "test_evaluated": false,
+  "spec_sha256": "6b446ab51f7372dd6675c58fdc3c1b1447dd53b3a779cfafa293d61a35b2a182",
+  "actual_train_images": 1020,
+  "optimizer_details": {
+    "class": "MuSGD",
+    "groups": [
+      {
+        "parameters": 0,
+        "lr": 0.03,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "use_muon": false,
+        "initial_lr": 0.03
+      },
+      {
+        "parameters": 0,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "param_group": "weight",
+        "use_muon": false,
+        "initial_lr": 0.01
+      },
+      {
+        "parameters": 2336,
+        "lr": 0.03,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "use_muon": false,
+        "initial_lr": 0.03
+      },
+      {
+        "parameters": 7448,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0,
+        "param_group": "bn",
+        "use_muon": false,
+        "initial_lr": 0.01
+      },
+      {
+        "parameters": 2360,
+        "lr": 0.03,
+        "momentum": 0.9,
+        "nesterov": true,
+        "param_group": "bias",
+        "weight_decay": 0.0,
+        "use_muon": false,
+        "initial_lr": 0.03
+      },
+      {
+        "parameters": 7472,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "param_group": "bias",
+        "weight_decay": 0.0,
+        "use_muon": false,
+        "initial_lr": 0.01
+      },
+      {
+        "parameters": 124384,
+        "lr": 0.03,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "use_muon": true,
+        "param_group": "muon",
+        "initial_lr": 0.03
+      },
+      {
+        "parameters": 2391344,
+        "lr": 0.01,
+        "momentum": 0.9,
+        "nesterov": true,
+        "weight_decay": 0.0005,
+        "use_muon": true,
+        "param_group": "muon",
+        "initial_lr": 0.01
+      }
+    ],
+    "muon_factor": 0.2,
+    "sgd_factor": 1.0
+  },
+  "initial_model_state_sha256": "111da1631eb4bf77119eb03027af923422e35187cf064187db2f22fe8f0409e6",
+  "training_seconds": 336.6929932570001,
+  "training_peak_vram_bytes": 2960483328,
+  "optimizer_steps": 1280,
+  "epochs_completed": 20,
+  "images_seen": 20480,
+  "sampling": {
+    "mode": "shuffled_cyclic_stream_v1",
+    "samples_per_epoch": 1024,
+    "musgd_head_lr_multiplier": 3.0
+  },
+  "samples_per_epoch": 1024,
+  "exposure_order_sha256": "02d82c72ef55eabb48f5b45abb6fe56ee20b74c987a725a6f6eef4e47ace2fb7",
+  "best_validation_epoch": 20,
+  "best_validation_map50_95": 0.76428,
+  "best_weights": "/kaggle/working/muon_yolo_journal/runs/journal-wildlife-MuSGD-s42-6b446ab51f73/attempt-001/train/weights/best.pt",
+  "best_weights_sha256": "b313df435573c7a58ec966598e5d2e39f6a1a6f29954942336d9f110030d743c",
+  "validation_seconds": 1.449954354000056,
+  "val_map50_95": 0.7666388470925829,
+  "val_map50": 0.9290818474469853,
+  "val_precision": 0.9394061703251202,
+  "val_recall": 0.8692995276871835,
+  "val_per_class_map50_95": [
+    0.7964278881112316,
+    0.7311610217603277,
+    0.7976443684310504,
+    0.7413221100677216
+  ],
+  "lr0": 0.01,
+  "finished_utc": "2026-10-24T23:07:17.388542+00:00",
+  "run_call_seconds": 338.3029161029999,
+  "dataset": "wildlife",
+  "subset_seed": 2026,
+  "corruption_seed": 2027,
+  "hyperparameters": {
+    "optimizer": "MuSGD",
+    "lr0": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "candidate_id": "34a1743a1cd9",
+  "roles": [
+    "variable_exposure_control",
+    "fixed_exposure_defaults"
+  ],
+  "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "source_fingerprint": "a2268d1ed873b662a32dc1dd134c73f6a70c1b60f1477d18ec82ed33bba8ba99"
+}

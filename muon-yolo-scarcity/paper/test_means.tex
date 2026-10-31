@@ -1,0 +1,17 @@
+\begin{table}[ht]
+\centering
+\caption{Frozen test mean mAP50--95 multiplied by 100, across three paired joint blocks. Fractions are training-image availability; missingness is target box-deletion probability. SGD was evaluated only on wildlife. Paired uncertainty is reported separately.}
+\begin{tabular}{lrrrrr}
+\toprule
+Dataset & Images & Missing & AdamW & MuSGD & SGD\\\midrule
+Wildlife & 20\% & 0\% & 80.30 & 81.08 & 81.17\\
+Wildlife & 20\% & 20\% & 74.86 & 75.12 & 77.59\\
+Wildlife & 100\% & 0\% & 84.32 & 85.06 & 84.59\\
+Wildlife & 100\% & 20\% & 82.78 & 82.53 & 82.86\\
+VOC-derived & 20\% & 0\% & 46.59 & 48.14 & --\\
+VOC-derived & 20\% & 20\% & 42.18 & 43.85 & --\\
+VOC-derived & 100\% & 0\% & 54.15 & 55.25 & --\\
+VOC-derived & 100\% & 20\% & 52.24 & 52.97 & --\\
+\bottomrule
+\end{tabular}
+\end{table}
