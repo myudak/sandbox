@@ -1,5 +1,5 @@
 # sandbox monorepo
-for sandbox only,, soo experiments etc,, inside is multiple disconnected projects
+for sandbox,, soo experiments etc,, inside is multiple disconnected projects
 
 ## Projects
 
