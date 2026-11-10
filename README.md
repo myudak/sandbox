@@ -5,6 +5,7 @@ for sandbox,, soo experiments etc,, inside is multiple disconnected projects
 
 - [`spar-dynamics-lab/`](spar-dynamics-lab/): interactive SPAR floating wind turbine simulation with a rotary tuned mass damper (Vite + React + three.js). Asks when the damper helps and when it hurts.
 - [`chatdna/`](chatdna/): local experiments in LLM fine-tuning with LoRA and building a decoder-only GPT from scratch in PyTorch. Includes data preparation, training, evaluation, a sentence finisher, and learning notes fromm my own whatsapp dataset
+- [`hukumos/`](hukumos/): law as code for Indonesia. UU 14/2008 (Keterbukaan Informasi Publik) as an executable state machine with an exhaustive verifier, injected-defect tests, and a React Flow simulator.
 - [`muon-yolo-scarcity/`](muon-yolo-scarcity/): research manuscript, reproducible code, numeric experiment evidence, and interactive results for MuSGD–YOLO26 fine-tuning under image scarcity and missing annotations.
 
 ## Research
