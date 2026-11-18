@@ -1,0 +1,233 @@
+{
+  "id": "uu-14-2008",
+  "law": "UU 14/2008 tentang Keterbukaan Informasi Publik",
+  "note": "Pasal texts are PARAPHRASES written from memory and not yet verified against the official text. Expected values are the modeller's, not yet reviewed by a legal expert.",
+  "pasal": [
+    {
+      "id": "P22_7",
+      "cite": "Pasal 22 ayat (7)",
+      "text": "Paling lambat 10 (sepuluh) hari kerja sejak diterimanya permintaan, Badan Publik yang bersangkutan wajib menyampaikan pemberitahuan tertulis yang berisikan informasi yang diminta berada di bawah penguasaannya ataupun tidak, serta menerima atau menolak permintaan berikut alasannya.",
+      "verified": false,
+      "fn": "batasPemberitahuan",
+      "params": [{ "name": "diterima", "type": "HariKerja" }],
+      "returns": "HariKerja",
+      "scenarios": [
+        { "id": "s1", "desc": "Permintaan diterima pada hari kerja ke-0", "args": ["0"], "expect": "10" },
+        { "id": "s2", "desc": "Permintaan diterima pada hari kerja ke-5", "args": ["5"], "expect": "15" },
+        { "id": "s3", "desc": "Permintaan diterima pada hari kerja ke-100", "args": ["100"], "expect": "110" }
+      ],
+      "perturbations": [
+        { "id": "angka", "label": "10 → 3 hari", "find": "10 (sepuluh)", "replace": "3 (tiga)", "expect": { "s1": "3", "s2": "8", "s3": "103" } }
+      ],
+      "properties": [
+        { "id": "setelah_diterima", "desc": "Batas waktu selalu sesudah permintaan diterima", "statement": "∀ d : HariKerja, d < F d" }
+      ]
+    },
+    {
+      "id": "P22_8",
+      "cite": "Pasal 22 ayat (8)",
+      "text": "Badan Publik dapat memperpanjang waktu untuk mengirimkan pemberitahuan sebagaimana dimaksud pada ayat (7), paling lambat 7 (tujuh) hari kerja berikutnya dengan memberikan alasan secara tertulis.",
+      "context": "Ayat (7): pemberitahuan wajib disampaikan paling lambat 10 hari kerja sejak diterimanya permintaan.",
+      "verified": false,
+      "fn": "batasPerpanjangan",
+      "params": [
+        { "name": "diterima", "type": "HariKerja" },
+        { "name": "perpanjangPada", "type": "HariKerja" }
+      ],
+      "returns": "HariKerja",
+      "scenarios": [
+        { "id": "s1", "desc": "Diperpanjang tepat pada hari ke-10", "args": ["0", "10"], "expect": "17" },
+        {
+          "id": "s2",
+          "desc": "Diperpanjang lebih awal, pada hari ke-3",
+          "args": ["0", "3"],
+          "readings": { "7 hari setelah periode 10 hari berakhir": "17", "7 hari sejak perpanjangan diberikan": "10" }
+        }
+      ],
+      "perturbations": [
+        { "id": "angka", "label": "7 → 14 hari", "find": "7 (tujuh)", "replace": "14 (empat belas)", "expect": { "s1": "24" } }
+      ],
+      "properties": [
+        { "id": "maks_17", "desc": "Jika perpanjangan diberikan dalam 10 hari, batas akhir paling lama hari ke-17", "statement": "∀ d p : HariKerja, p ≤ d + 10 → F d p ≤ d + 17" }
+      ]
+    },
+    {
+      "id": "P35_1",
+      "cite": "Pasal 35 ayat (1)",
+      "text": "Setiap Pemohon Informasi Publik dapat mengajukan keberatan secara tertulis kepada atasan Pejabat Pengelola Informasi dan Dokumentasi berdasarkan alasan berikut: a. penolakan atas permintaan informasi berdasarkan alasan pengecualian sebagaimana dimaksud dalam Pasal 17; b. tidak disediakannya informasi berkala; c. tidak ditanggapinya permintaan informasi; d. permintaan informasi ditanggapi tidak sebagaimana yang diminta; e. tidak dipenuhinya permintaan informasi; f. pengenaan biaya yang tidak wajar; dan/atau g. penyampaian informasi yang melebihi waktu yang diatur dalam Undang-Undang ini.",
+      "verified": false,
+      "fn": "bolehKeberatan",
+      "params": [{ "name": "a", "type": "AlasanKeberatan" }],
+      "returns": "Bool",
+      "scenarios": [
+        { "id": "s1", "desc": "Permintaan tidak ditanggapi", "args": [".tidakDitanggapi"], "expect": "true" },
+        { "id": "s2", "desc": "Biaya tidak wajar", "args": [".biayaTidakWajar"], "expect": "true" },
+        { "id": "s3", "desc": "Ditolak karena dikecualikan (Pasal 17)", "args": [".penolakanPasal17"], "expect": "true" },
+        { "id": "s4", "desc": "Alasan lain yang tidak tercantum", "args": [".lainnya"], "expect": "false" }
+      ],
+      "perturbations": [
+        { "id": "hapus_butir", "label": "Hapus butir f (biaya)", "find": " f. pengenaan biaya yang tidak wajar;", "replace": "", "expect": { "s1": "true", "s2": "false", "s3": "true", "s4": "false" } }
+      ],
+      "properties": [
+        { "id": "diabaikan_boleh", "desc": "Permintaan yang diabaikan selalu bisa diajukan keberatan", "statement": "F .tidakDitanggapi = true" }
+      ]
+    },
+    {
+      "id": "P36_1",
+      "cite": "Pasal 36 ayat (1)",
+      "text": "Keberatan diajukan oleh Pemohon Informasi Publik dalam jangka waktu paling lambat 30 (tiga puluh) hari kerja setelah ditemukannya alasan sebagaimana dimaksud dalam Pasal 35 ayat (1).",
+      "verified": false,
+      "fn": "batasKeberatan",
+      "params": [{ "name": "alasanDitemukan", "type": "HariKerja" }],
+      "returns": "HariKerja",
+      "scenarios": [
+        { "id": "s1", "desc": "Alasan ditemukan pada hari ke-0", "args": ["0"], "expect": "30" },
+        { "id": "s2", "desc": "Alasan ditemukan pada hari ke-7", "args": ["7"], "expect": "37" }
+      ],
+      "perturbations": [
+        { "id": "angka", "label": "30 → 3 hari", "find": "30 (tiga puluh)", "replace": "3 (tiga)", "expect": { "s1": "3", "s2": "10" } }
+      ],
+      "properties": [
+        { "id": "monoton", "desc": "Alasan ditemukan lebih lambat → batas lebih lambat", "statement": "∀ a b : HariKerja, a ≤ b → F a ≤ F b" }
+      ]
+    },
+    {
+      "id": "P36_2",
+      "cite": "Pasal 36 ayat (2)",
+      "text": "Atasan pejabat sebagaimana dimaksud dalam Pasal 35 ayat (1) memberikan tanggapan atas keberatan yang diajukan oleh Pemohon Informasi Publik dalam jangka waktu paling lambat 30 (tiga puluh) hari kerja sejak diterimanya keberatan secara tertulis.",
+      "verified": false,
+      "fn": "batasTanggapanAtasan",
+      "params": [{ "name": "keberatanDiterima", "type": "HariKerja" }],
+      "returns": "HariKerja",
+      "scenarios": [
+        { "id": "s1", "desc": "Keberatan diterima pada hari ke-0", "args": ["0"], "expect": "30" },
+        { "id": "s2", "desc": "Keberatan diterima pada hari ke-12", "args": ["12"], "expect": "42" }
+      ],
+      "perturbations": [
+        { "id": "angka", "label": "30 → 14 hari", "find": "30 (tiga puluh)", "replace": "14 (empat belas)", "expect": { "s1": "14", "s2": "26" } }
+      ],
+      "properties": [
+        { "id": "setelah_diterima", "desc": "Batas tanggapan selalu sesudah keberatan diterima", "statement": "∀ d : HariKerja, d < F d" }
+      ]
+    },
+    {
+      "id": "P37_2",
+      "cite": "Pasal 37 ayat (2)",
+      "text": "Upaya penyelesaian Sengketa Informasi Publik diajukan dalam waktu paling lambat 14 (empat belas) hari kerja setelah diterimanya tanggapan tertulis dari atasan pejabat sebagaimana dimaksud dalam Pasal 36 ayat (2).",
+      "context": "Pasal 36 ayat (2): atasan pejabat memberikan tanggapan paling lambat 30 hari kerja sejak diterimanya keberatan. `tanggapanDiterima = none` berarti atasan tidak pernah menanggapi.",
+      "verified": false,
+      "fn": "batasSengketa",
+      "params": [
+        { "name": "keberatanDiterima", "type": "HariKerja" },
+        { "name": "tanggapanDiterima", "type": "Option HariKerja" }
+      ],
+      "returns": "Option HariKerja",
+      "scenarios": [
+        { "id": "s1", "desc": "Tanggapan diterima pada hari ke-20", "args": ["0", "(some 20)"], "expect": "some 34" },
+        {
+          "id": "s2",
+          "desc": "Atasan tidak pernah menanggapi",
+          "args": ["0", "none"],
+          "readings": { "14 hari setelah batas 30 hari atasan berakhir": "some 44", "batas waktu tidak pernah mulai berjalan": "none" }
+        }
+      ],
+      "perturbations": [
+        { "id": "angka", "label": "14 → 30 hari", "find": "14 (empat belas)", "replace": "30 (tiga puluh)", "expect": { "s1": "some 50" } }
+      ],
+      "properties": [
+        { "id": "setelah_tanggapan", "desc": "Jika ada tanggapan, batasnya 14 hari kerja setelahnya", "statement": "∀ k t : HariKerja, F k (some t) = some (t + 14)" }
+      ]
+    },
+    {
+      "id": "P38_1",
+      "cite": "Pasal 38 ayat (1)",
+      "text": "Komisi Informasi Pusat dan Komisi Informasi provinsi dan/atau Komisi Informasi kabupaten/kota harus mulai mengupayakan penyelesaian Sengketa Informasi Publik melalui Mediasi dan/atau Ajudikasi nonlitigasi paling lambat 14 (empat belas) hari kerja setelah menerima permohonan penyelesaian Sengketa Informasi Publik.",
+      "verified": false,
+      "fn": "batasMulaiPenyelesaian",
+      "params": [{ "name": "permohonanDiterima", "type": "HariKerja" }],
+      "returns": "HariKerja",
+      "scenarios": [
+        { "id": "s1", "desc": "Permohonan diterima pada hari ke-0", "args": ["0"], "expect": "14" },
+        { "id": "s2", "desc": "Permohonan diterima pada hari ke-44", "args": ["44"], "expect": "58" }
+      ],
+      "perturbations": [
+        { "id": "angka", "label": "14 → 7 hari", "find": "14 (empat belas)", "replace": "7 (tujuh)", "expect": { "s1": "7", "s2": "51" } }
+      ],
+      "properties": [
+        { "id": "setelah_diterima", "desc": "Batas mulai selalu sesudah permohonan diterima", "statement": "∀ d : HariKerja, d < F d" }
+      ]
+    },
+    {
+      "id": "P38_2",
+      "cite": "Pasal 38 ayat (2)",
+      "text": "Proses penyelesaian sengketa sebagaimana dimaksud pada ayat (1) paling lambat dapat diselesaikan dalam waktu 100 (seratus) hari kerja.",
+      "context": "Ayat (1): Komisi Informasi harus mulai mengupayakan penyelesaian paling lambat 14 hari kerja setelah menerima permohonan.",
+      "verified": false,
+      "fn": "batasPenyelesaian",
+      "params": [
+        { "name": "permohonanDiterima", "type": "HariKerja" },
+        { "name": "mulaiPenyelesaian", "type": "HariKerja" }
+      ],
+      "returns": "HariKerja",
+      "scenarios": [
+        { "id": "s1", "desc": "Penyelesaian dimulai pada hari permohonan diterima", "args": ["0", "0"], "expect": "100" },
+        {
+          "id": "s2",
+          "desc": "Permohonan hari ke-0, penyelesaian dimulai hari ke-14",
+          "args": ["0", "14"],
+          "readings": { "100 hari sejak proses dimulai": "114", "100 hari sejak permohonan diterima": "100" }
+        }
+      ],
+      "perturbations": [
+        { "id": "angka", "label": "100 → 60 hari", "find": "100 (seratus)", "replace": "60 (enam puluh)", "expect": { "s1": "60" } }
+      ],
+      "properties": [
+        { "id": "minimal_100", "desc": "Selesai tidak lebih awal dari 100 hari setelah permohonan", "statement": "∀ d m : HariKerja, d ≤ m → d + 100 ≤ F d m" }
+      ]
+    },
+    {
+      "id": "P47",
+      "cite": "Pasal 47",
+      "text": "(1) Pengajuan gugatan dilakukan melalui pengadilan tata usaha negara apabila yang digugat adalah Badan Publik negara. (2) Pengajuan gugatan dilakukan melalui pengadilan negeri apabila yang digugat adalah Badan Publik selain Badan Publik negara sebagaimana dimaksud pada ayat (1).",
+      "verified": false,
+      "fn": "pengadilanBerwenang",
+      "params": [{ "name": "b", "type": "JenisBadanPublik" }],
+      "returns": "Pengadilan",
+      "scenarios": [
+        { "id": "s1", "desc": "Menggugat Badan Publik negara", "args": [".negara"], "expect": "ptun" },
+        { "id": "s2", "desc": "Menggugat Badan Publik non-negara", "args": [".nonNegara"], "expect": "pn" }
+      ],
+      "perturbations": [
+        {
+          "id": "tukar",
+          "label": "Tukar PTUN ↔ PN",
+          "find": "pengadilan tata usaha negara apabila yang digugat adalah Badan Publik negara. (2) Pengajuan gugatan dilakukan melalui pengadilan negeri",
+          "replace": "pengadilan negeri apabila yang digugat adalah Badan Publik negara. (2) Pengajuan gugatan dilakukan melalui pengadilan tata usaha negara",
+          "expect": { "s1": "pn", "s2": "ptun" }
+        }
+      ],
+      "properties": [
+        { "id": "negara_ptun", "desc": "Badan Publik negara digugat di PTUN", "statement": "F .negara = .ptun" }
+      ]
+    },
+    {
+      "id": "P48_1",
+      "cite": "Pasal 48 ayat (1)",
+      "text": "Pengajuan gugatan sebagaimana dimaksud dalam Pasal 47 ayat (1) dan ayat (2) hanya dapat ditempuh apabila salah satu atau para pihak yang bersengketa secara tertulis menyatakan tidak menerima putusan Ajudikasi dari Komisi Informasi paling lambat 14 (empat belas) hari kerja setelah diterimanya putusan tersebut.",
+      "verified": false,
+      "fn": "batasMenolakPutusan",
+      "params": [{ "name": "putusanDiterima", "type": "HariKerja" }],
+      "returns": "HariKerja",
+      "scenarios": [
+        { "id": "s1", "desc": "Putusan diterima pada hari ke-0", "args": ["0"], "expect": "14" },
+        { "id": "s2", "desc": "Putusan diterima pada hari ke-3", "args": ["3"], "expect": "17" }
+      ],
+      "perturbations": [
+        { "id": "angka", "label": "14 → 30 hari", "find": "14 (empat belas)", "replace": "30 (tiga puluh)", "expect": { "s1": "30", "s2": "33" } }
+      ],
+      "properties": [
+        { "id": "setelah_diterima", "desc": "Batas selalu sesudah putusan diterima", "statement": "∀ d : HariKerja, d < F d" }
+      ]
+    }
+  ]
+}

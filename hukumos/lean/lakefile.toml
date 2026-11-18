@@ -1,0 +1,5 @@
+name = "hukumos"
+defaultTargets = ["HukumOS"]
+
+[[lean_lib]]
+name = "HukumOS"

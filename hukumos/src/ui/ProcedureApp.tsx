@@ -13,7 +13,7 @@ type Tab = 'sim' | 'pasal' | 'verif';
 
 const today = () => new Date().toISOString().slice(0, 10);
 
-export function App() {
+export function ProcedureApp() {
   const [tab, setTab] = useState<Tab>('sim');
   const [mutantId, setMutantId] = useState<string | null>(null);
   const model = useMemo(() => {
