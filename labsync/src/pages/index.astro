@@ -126,6 +126,9 @@ const roles = [
         <section id="showreel" class="showreel wrap">
           <h2>Lihat geraknya.</h2>
           <video src={SHOWREEL} poster="/video/labsync-showreel.jpg" controls playsinline preload="metadata" />
+          <p class="credits">
+            Musik: "Like We Do It", Grace Mesa. Efek suara: "BUBBLE POP .wav" oleh Ch0cchi (CC BY 3.0, Freesound) dan suara CC0 dari Openverse.
+          </p>
         </section>
       )
     }
@@ -512,6 +515,11 @@ const roles = [
   .showreel h2 {
     font-size: clamp(44px, 6vw, 84px);
     margin-bottom: 22px;
+  }
+  .credits {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--muted);
   }
   .showreel video {
     width: 100%;
