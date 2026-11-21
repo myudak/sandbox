@@ -1,0 +1,46 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  width?: number;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  /** Show only the top part of the screen (fraction of the height). */
+  crop?: number;
+}
+const { src, alt, width = 300, class: cls = '', loading = 'lazy', crop } = Astro.props;
+---
+
+<figure class:list={['phone', cls]} style={crop ? `--crop:${crop}` : undefined}>
+  <div class="screen">
+    <Image src={src} alt={alt} widths={[width, width * 2]} sizes={`${width}px`} loading={loading} />
+  </div>
+</figure>
+
+<style>
+  .phone {
+    margin: 0;
+    padding: 9px;
+    background: var(--ink);
+    border-radius: 44px;
+    box-shadow:
+      0 1px 0 2px rgb(255 255 255 / 0.06) inset,
+      0 30px 60px -20px rgb(27 27 27 / 0.45);
+    width: 100%;
+  }
+  .screen {
+    border-radius: 35px;
+    overflow: hidden;
+    background: var(--sage);
+    aspect-ratio: 390 / calc(844 * var(--crop, 1));
+  }
+  .screen :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+</style>

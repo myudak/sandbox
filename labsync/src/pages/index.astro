@@ -1,0 +1,824 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import { Image } from 'astro:assets';
+import QRCode from 'qrcode';
+
+import Base from '../layouts/Base.astro';
+import Phone from '../components/Phone.astro';
+import { formatDate, formatSize, getReleases, RELEASES_URL } from '../data/release';
+
+import pHome from '../assets/shots/p-home.png';
+import aQr from '../assets/shots/a-qr.png';
+import pPresensi from '../assets/shots/p-presensi.png';
+import pDone from '../assets/shots/p-presensi-done.png';
+import pIzinBaru from '../assets/shots/p-izin-baru.png';
+import aIzin from '../assets/shots/a-izin.png';
+import pKuis from '../assets/shots/p-kuis.png';
+import aRekap from '../assets/shots/a-rekap.png';
+import aLog from '../assets/shots/a-log.png';
+import pPeta from '../assets/shots/p-peta.png';
+import pKelas from '../assets/shots/p-kelas.png';
+import aHome from '../assets/shots/a-home.png';
+import kHome from '../assets/shots/k-home.png';
+import tHome from '../assets/shots/t-a-home.png';
+
+const releases = await getReleases();
+const latest = releases[0];
+const size = formatSize(latest.apkSize);
+const WEB_APP = 'https://labsync-swart.vercel.app';
+const SOURCE = 'https://github.com/myudak/sandbox/tree/main/labsync';
+// The showreel is added to public/video when it's rendered; the section hides until then.
+const SHOWREEL = '/video/labsync-showreel.mp4';
+const apkQr = await QRCode.toString(latest.apkUrl, { type: 'svg', margin: 0, errorCorrectionLevel: 'M', color: { dark: '#1e1e1e', light: '#00000000' } });
+const hasShowreel = existsSync(join(process.cwd(), 'public', SHOWREEL));
+
+const marquee = ['Presensi lokasi', 'QR berganti', 'Izin', 'Kuis terkunci', 'Rekap live', 'Buku nilai', 'Ekspor Excel', 'Log audit', 'Peta lab', 'Bagikan'];
+
+const roles = [
+  {
+    name: 'Praktikan',
+    tone: 'coral',
+    shot: pHome,
+    alt: 'Beranda praktikan: sesi yang sedang berlangsung dan tombol presensi',
+    points: ['Presensi dari lab dalam satu ketukan', 'Ajukan izin dan pantau statusnya', 'Kerjakan kuis pertemuan', 'Lihat jadwal dan kehadiranmu'],
+  },
+  {
+    name: 'Asisten',
+    tone: 'violet',
+    shot: aHome,
+    alt: 'Beranda asisten: sesi live, jumlah hadir, izin yang perlu ditinjau',
+    points: ['Buka sesi dan tampilkan QR', 'Pantau yang hadir secara live', 'Tinjau izin, isi nilai, ekspor', 'Buat kuis dan materi pertemuan'],
+  },
+  {
+    name: 'Koordinator',
+    tone: 'mustard',
+    shot: kHome,
+    alt: 'Konsol koordinator: pengguna, lab aktif, kelas, permintaan akses',
+    points: ['Atur kelas, asisten, dan praktikan', 'Kelola ruang lab dan titik lokasinya', 'Baca log perubahan semua kelas', 'Setujui permintaan akses asisten'],
+  },
+];
+---
+
+<Base
+  title="LabSync · Presensi dan izin praktikum dalam satu aplikasi"
+  description="LabSync: presensi praktikum berbasis lokasi dan QR, izin, kuis terkunci, rekap live, nilai, dan log audit. Unduh APK Android atau buka di web."
+>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="#" aria-label="LabSync, ke atas">
+        <img src="/img/icon-64.png" alt="" width="36" height="36" />
+        <span>LabSync</span>
+      </a>
+      <nav class="links" aria-label="Bagian halaman">
+        <a href="#fitur">Fitur</a>
+        <a href="#peran">Peran</a>
+        {hasShowreel && <a href="#showreel">Video</a>}
+        <a href="#rilis">Rilis</a>
+      </nav>
+      <a class="top-cta" href={latest.apkUrl}>Unduh APK</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <h1>Praktikum rapi, dari <mark>presensi</mark> sampai nilai.</h1>
+        <p class="lede">
+          LabSync dipakai praktikan, asisten, dan koordinator lab. Presensi dicek lokasinya, izin langsung ditinjau, kuis dikunci, dan setiap perubahan
+          tercatat.
+        </p>
+        <div class="ctas">
+          <a class="btn btn-primary" href={latest.apkUrl}>
+            Unduh APK Android
+            <span class="dot" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 12l6 6 6-6" /></svg>
+            </span>
+          </a>
+          <a class="btn btn-ghost" href={WEB_APP}>Buka versi web</a>
+        </div>
+        <p class="meta">
+          v{latest.version} · {formatDate(latest.date)}{size && ` · ${size}`} · Android 7+
+        </p>
+      </div>
+
+      <div class="hero-art" aria-hidden="false">
+        <div class="poster">
+          <span class="ring r1"></span>
+          <span class="ring r2"></span>
+          <img class="labi" src="/mascot/labi-hello.png" alt="" width="290" height="323" />
+          <div class="hero-phones">
+            <Phone src={aQr} alt="Layar asisten: QR presensi yang berganti tiap 15 detik" width={250} class="ph back" loading="eager" />
+            <Phone src={pHome} alt="Layar praktikan: sesi berlangsung dengan tombol Presensi sekarang" width={280} class="ph front" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        {[0, 1].map(() => marquee.map((m) => <span>{m}</span>))}
+      </div>
+    </div>
+
+    {
+      hasShowreel && (
+        <section id="showreel" class="showreel wrap">
+          <h2>Lihat geraknya.</h2>
+          <video src={SHOWREEL} poster="/video/labsync-showreel.jpg" controls playsinline preload="metadata" />
+        </section>
+      )
+    }
+
+    <section id="fitur" class="features wrap">
+      <h2 class="section-title">Yang dikerjakan LabSync</h2>
+
+      <article class="tile t-violet t-wide">
+        <div class="tile-copy">
+          <h3>Presensi cuma bisa dari lab.</h3>
+          <p>
+            Server yang memeriksa: kamu harus di dalam radius ruang lab, akurasi GPS cukup, dan bukan lokasi palsu. Sinyal lemah? Scan QR di layar asisten,
+            yang berganti tiap 15 detik supaya fotonya tidak bisa dipakai ulang.
+          </p>
+        </div>
+        <div class="tile-phones">
+          <Phone src={pPresensi} alt="Presensi: jarak 0 m dari Lab Informatika B, radius 45 m" width={240} />
+          <Phone src={pDone} alt="Presensi tercatat, jarak dan akurasi ditampilkan" width={240} />
+        </div>
+      </article>
+
+      <article class="tile t-mustard">
+        <div class="tile-copy">
+          <h3>Izin nggak lewat chat pribadi.</h3>
+          <p>Pilih pertemuan, tulis alasan, lampirkan surat. Alasannya dipilah otomatis, lalu asisten setujui atau tolak dengan catatan.</p>
+        </div>
+        <div class="tile-phones">
+          <Phone src={pIzinBaru} alt="Form ajukan izin: pilih pertemuan dan tulis alasan" width={220} crop={0.62} />
+          <Phone src={aIzin} alt="Asisten meninjau izin yang menunggu" width={220} crop={0.62} />
+        </div>
+      </article>
+
+      <article class="tile t-coral">
+        <div class="tile-copy">
+          <h3>Kuis mode terkunci.</h3>
+          <p>Keluar aplikasi dan tangkapan layar dicatat sebagai pelanggaran. Peringatan ke-4 langsung mengumpulkan jawaban. Pilihan ganda dan isian.</p>
+        </div>
+        <div class="tile-phones one">
+          <Phone src={pKuis} alt="Aturan kuis terkunci: 5 soal, 20 menit, 3 peringatan" width={260} crop={0.62} />
+        </div>
+      </article>
+
+      <article class="tile t-aqua">
+        <div class="tile-copy">
+          <h3>Rekap live, nilai, Excel.</h3>
+          <p>Siapa yang sudah hadir terlihat saat itu juga. Isi nilai per tugas, lalu ekspor rekap dan nilai kelas ke Excel.</p>
+        </div>
+        <div class="tile-phones one">
+          <Phone src={aRekap} alt="Rekap pertemuan: 13 hadir, 3 terlambat, daftar praktikan" width={260} crop={0.62} />
+        </div>
+      </article>
+
+      <article class="tile t-ink">
+        <div class="tile-copy">
+          <h3>Log yang nggak bisa diubah.</h3>
+          <p>Perubahan nilai, presensi, izin, dan kuis tercatat berantai hash. Diedit sedikit saja, rantainya putus dan ketahuan.</p>
+        </div>
+        <div class="tile-phones one">
+          <Phone src={aLog} alt="Log perubahan: catatan berantai, tidak bisa diubah atau dihapus" width={260} crop={0.62} />
+        </div>
+      </article>
+
+      <article class="tile t-cream">
+        <div class="tile-copy">
+          <h3>Cari lab tanpa nyasar.</h3>
+          <p>Peta lab dengan radius presensinya, jadwal pemakaian ruang, foto ruangan, dan tombol rute.</p>
+        </div>
+        <div class="tile-phones one">
+          <Phone src={pPeta} alt="Peta lab: Lab Informatika B sedang dipakai" width={260} crop={0.62} />
+        </div>
+      </article>
+
+      <article class="tile t-sage">
+        <div class="tile-copy">
+          <h3>Bagikan ke grup kelas.</h3>
+          <p>Pertemuan dan kelas bisa dibagikan sebagai kartu gambar atau teks ke WhatsApp, X, dan Telegram. Tautan grup dan folder materi ada di halaman kelas.</p>
+        </div>
+        <div class="tile-phones one">
+          <Phone src={pKelas} alt="Halaman kelas dengan tautan grup WhatsApp dan folder modul" width={260} crop={0.62} />
+        </div>
+      </article>
+    </section>
+
+    <section id="peran" class="roles wrap">
+      <h2 class="section-title">Satu aplikasi, tiga peran.</h2>
+      <p class="section-lede">Beranda menyesuaikan siapa yang masuk, jadi tiap orang langsung lihat yang perlu dikerjakan.</p>
+      <div class="role-grid">
+        {
+          roles.map((r) => (
+            <article class="role">
+              <span class:list={['chip', `chip-${r.tone}`]}>{r.name}</span>
+              <Phone src={r.shot} alt={r.alt} width={300} crop={0.78} />
+              <ul>
+                {r.points.map((p) => (
+                  <li>{p}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="tablet">
+      <div class="wrap tablet-row">
+        <div class="tablet-copy">
+          <h2>Pas di tablet juga.</h2>
+          <p>Di layar lebar, isi jadi dua kolom dan navigasinya bisa ditaruh di kiri, kanan, atau bawah. Cocok buat layar asisten di meja lab.</p>
+        </div>
+        <figure class="tablet-frame">
+          <Image src={tHome} alt="Beranda asisten di tablet dengan navigasi di kiri" widths={[700, 1400]} sizes="(min-width: 960px) 720px, 100vw" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="rilis" class="release wrap">
+      <div class="release-card">
+        <div class="release-head">
+          <img src="/mascot/labi-success.png" alt="" width="140" height="134" />
+          <div>
+            <p class="chip chip-violet">Rilis terbaru</p>
+            <h2>LabSync {latest.version}</h2>
+            <p class="release-meta">
+              {formatDate(latest.date)}{size && ` · ${size}`} · APK Android
+            </p>
+          </div>
+        </div>
+        <ul class="notes">
+          {latest.notes.map((n) => <li>{n}</li>)}
+        </ul>
+        <div class="ctas">
+          <a class="btn btn-primary" href={latest.apkUrl}>
+            Unduh {latest.version}
+            <span class="dot" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13M6 12l6 6 6-6" /></svg>
+            </span>
+          </a>
+          <a class="btn btn-ghost" href={RELEASES_URL}>Semua rilis</a>
+        </div>
+      </div>
+
+      <div class="install">
+        <h3>Cara pasang</h3>
+        <ol>
+          <li>Unduh file APK di HP Android.</li>
+          <li>Buka filenya. Kalau diminta, izinkan pemasangan dari browser atau file manager.</li>
+          <li>Masuk pakai NIM atau email. Praktikan bisa daftar sendiri; akun asisten dibuat koordinator.</li>
+        </ol>
+        <div class="scan">
+          <div class="qr" set:html={apkQr} role="img" aria-label="Kode QR tautan unduh APK" />
+          <p>Buka halaman ini di laptop? Scan kode ini pakai kamera HP untuk langsung mengunduh.</p>
+        </div>
+        {
+          releases.length > 1 && (
+            <>
+              <h3>Rilis sebelumnya</h3>
+              <ul class="older">
+                {releases.slice(1, 6).map((r) => (
+                  <li>
+                    <a href={r.pageUrl}>v{r.version}</a> · {formatDate(r.date)}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )
+        }
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-row">
+      <img src="/mascot/labi-hello.png" alt="Labi, maskot LabSync" width="96" height="107" />
+      <p>
+        <strong>LabSync</strong> · presensi dan izin praktikum.<br />
+        Data di gambar adalah data contoh. <a href={SOURCE}>Kode halaman ini</a>
+      </p>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  /* Header */
+  .top {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--sage) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .top-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 68px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 26px;
+    text-transform: uppercase;
+  }
+  .brand img {
+    border-radius: 10px;
+  }
+  .links {
+    display: flex;
+    gap: 22px;
+    margin-left: auto;
+    font-weight: 500;
+  }
+  .links a {
+    text-decoration: none;
+  }
+  .links a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .top-cta {
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--ink-fg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  @media (max-width: 720px) {
+    .links {
+      display: none;
+    }
+    .top-cta {
+      margin-left: auto;
+    }
+  }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
+    padding-top: clamp(28px, 6vw, 72px);
+    padding-bottom: clamp(40px, 6vw, 80px);
+  }
+  .hero h1 {
+    font-size: clamp(56px, 8.4vw, 124px);
+  }
+  .hero mark {
+    background: none;
+    color: var(--violet);
+  }
+  .lede {
+    margin-top: 22px;
+    max-width: 34em;
+    font-size: clamp(17px, 1.5vw, 20px);
+    color: #3a3934;
+  }
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+  .meta {
+    margin-top: 16px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .poster {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1.04;
+    border-radius: 44px;
+    background: var(--violet);
+  }
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border-style: solid;
+  }
+  .r1 {
+    width: 520px;
+    height: 520px;
+    left: -170px;
+    bottom: -230px;
+    border-width: 70px;
+    border-color: rgb(0 0 0 / 0.07);
+  }
+  .r2 {
+    width: 300px;
+    height: 300px;
+    right: -90px;
+    top: -90px;
+    border-width: 46px;
+    border-color: rgb(255 255 255 / 0.07);
+  }
+  .labi {
+    position: absolute;
+    width: 34%;
+    left: 5%;
+    top: 6%;
+    transform: rotate(-6deg);
+  }
+  .hero-phones {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-phones :global(.ph) {
+    position: absolute;
+    width: 46%;
+  }
+  .hero-phones :global(.front) {
+    right: 8%;
+    top: 12%;
+    transform: rotate(4deg);
+  }
+  .hero-phones :global(.back) {
+    left: 14%;
+    top: 46%;
+    width: 41%;
+    transform: rotate(-7deg);
+  }
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    .poster {
+      aspect-ratio: 1 / 1.08;
+    }
+  }
+
+  /* Marquee */
+  .marquee {
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--ink-fg);
+    padding: 18px 0;
+    transform: rotate(-1.2deg);
+    margin: 8px -20px 40px;
+  }
+  .track {
+    display: flex;
+    width: max-content;
+    gap: 40px;
+    animation: slide 38s linear infinite;
+  }
+  .track span {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(30px, 4vw, 48px);
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .track span:nth-child(3n + 1) {
+    color: var(--mustard);
+  }
+  .track span:nth-child(3n + 2) {
+    color: var(--aqua);
+  }
+  .track span::after {
+    content: '✦';
+    margin-left: 40px;
+    color: var(--coral);
+  }
+  @keyframes slide {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Showreel */
+  .showreel {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .showreel h2 {
+    font-size: clamp(44px, 6vw, 84px);
+    margin-bottom: 22px;
+  }
+  .showreel video {
+    width: 100%;
+    border-radius: 28px;
+    background: var(--ink);
+    box-shadow: 0 30px 70px -30px rgb(27 27 27 / 0.5);
+  }
+
+  /* Features */
+  .section-title {
+    font-size: clamp(44px, 6vw, 84px);
+    margin-bottom: 26px;
+  }
+  .section-lede {
+    max-width: 36em;
+    margin: -10px 0 30px;
+    color: #3a3934;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .features .section-title {
+    grid-column: 1 / -1;
+  }
+  .tile {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    overflow: hidden;
+    border-radius: 36px;
+    padding: clamp(22px, 3vw, 36px) clamp(22px, 3vw, 36px) 0;
+    min-width: 0;
+  }
+  .tile h3 {
+    font-size: clamp(34px, 3.6vw, 52px);
+  }
+  .tile p {
+    margin-top: 12px;
+    max-width: 30em;
+  }
+  .tile-phones {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+    margin-top: auto;
+  }
+  .tile-phones :global(.phone) {
+    max-width: 260px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 0;
+  }
+  .tile-phones :global(.phone .screen) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .t-wide {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .t-wide .tile-copy {
+    flex: 1;
+    align-self: center;
+    padding-bottom: 36px;
+  }
+  .t-wide .tile-phones {
+    flex: 1.1;
+  }
+  .t-wide .tile-phones :global(.phone) {
+    border-radius: 44px 44px 0 0;
+    aspect-ratio: auto;
+  }
+  .t-wide .tile-phones :global(.phone .screen) {
+    aspect-ratio: 390 / 640;
+  }
+  .t-violet {
+    background: var(--violet);
+    color: #fff;
+  }
+  .t-mustard {
+    background: var(--mustard);
+  }
+  .t-coral {
+    background: var(--coral);
+  }
+  .t-aqua {
+    background: var(--aqua);
+  }
+  .t-ink {
+    background: var(--ink);
+    color: var(--ink-fg);
+  }
+  .t-ink p {
+    color: var(--ink-muted);
+  }
+  .t-cream {
+    background: var(--cream);
+  }
+  .t-sage {
+    background: var(--sage-deep);
+  }
+  @media (max-width: 820px) {
+    .features {
+      grid-template-columns: 1fr;
+    }
+    .t-wide {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .t-wide .tile-copy {
+      padding-bottom: 0;
+    }
+    .tile-phones :global(.phone) {
+      max-width: 220px;
+    }
+  }
+
+  /* Roles */
+  .roles {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .role {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px;
+    border-radius: 32px;
+    background: var(--cream);
+  }
+  .role .chip {
+    align-self: flex-start;
+  }
+  .role :global(.phone) {
+    max-width: 300px;
+    align-self: center;
+  }
+  .role ul {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 6px;
+  }
+  .chip-coral {
+    background: var(--coral);
+  }
+  .chip-violet {
+    background: var(--violet);
+    color: #fff;
+  }
+  .chip-mustard {
+    background: var(--mustard);
+  }
+  @media (max-width: 900px) {
+    .role-grid {
+      grid-template-columns: 1fr;
+      max-width: 440px;
+    }
+  }
+
+  /* Tablet */
+  .tablet {
+    background: var(--ink);
+    color: var(--ink-fg);
+    padding: clamp(50px, 7vw, 96px) 0;
+  }
+  .tablet-row {
+    display: grid;
+    grid-template-columns: 0.8fr 1.4fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .tablet h2 {
+    font-size: clamp(44px, 6vw, 84px);
+    color: var(--mustard);
+  }
+  .tablet p {
+    margin-top: 16px;
+    color: var(--ink-muted);
+    max-width: 26em;
+  }
+  .tablet-frame {
+    margin: 0;
+    padding: 12px;
+    border-radius: 34px;
+    background: #0d0d0d;
+    box-shadow: 0 0 0 2px #333 inset;
+  }
+  .tablet-frame :global(img) {
+    border-radius: 24px;
+    width: 100%;
+  }
+  @media (max-width: 900px) {
+    .tablet-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Release */
+  .release {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 22px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .release-card {
+    border-radius: 36px;
+    padding: clamp(22px, 3vw, 40px);
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    box-shadow: 8px 8px 0 var(--ink);
+  }
+  .release-head {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .release-head img {
+    width: clamp(90px, 12vw, 140px);
+    height: auto;
+  }
+  .release-head h2 {
+    font-size: clamp(40px, 5vw, 64px);
+    margin-top: 8px;
+  }
+  .release-meta {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .notes {
+    margin: 22px 0 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 8px;
+  }
+  .install {
+    border-radius: 36px;
+    padding: clamp(22px, 3vw, 36px);
+    background: var(--cream);
+  }
+  .install h3 {
+    font-size: 34px;
+  }
+  .install h3 + * {
+    margin-top: 14px;
+  }
+  .install ol {
+    padding-left: 22px;
+    margin-bottom: 26px;
+    display: grid;
+    gap: 10px;
+  }
+  .older {
+    padding-left: 20px;
+  }
+  .scan {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px;
+    border-radius: 24px;
+    background: var(--paper);
+    margin-bottom: 22px;
+  }
+  .qr {
+    flex: none;
+    width: 132px;
+    height: 132px;
+  }
+  .qr :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+  .scan p {
+    font-size: 15px;
+    color: #3a3934;
+  }
+  @media (max-width: 900px) {
+    .release {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Footer */
+  .foot {
+    border-top: 1px solid var(--line);
+    padding: 36px 0 48px;
+  }
+  .foot-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: #3a3934;
+    font-size: 15px;
+  }
+</style>

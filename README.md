@@ -6,6 +6,7 @@ for sandbox,, soo experiments etc,, inside is multiple disconnected projects
 - [`spar-dynamics-lab/`](spar-dynamics-lab/): interactive SPAR floating wind turbine simulation with a rotary tuned mass damper (Vite + React + three.js). Asks when the damper helps and when it hurts.
 - [`chatdna/`](chatdna/): local experiments in LLM fine-tuning with LoRA and building a decoder-only GPT from scratch in PyTorch. Includes data preparation, training, evaluation, a sentence finisher, and learning notes fromm my own whatsapp dataset
 - [`muon-yolo-scarcity/`](muon-yolo-scarcity/): research manuscript, reproducible code, numeric experiment evidence, and interactive results for MuSGD–YOLO26 fine-tuning under image scarcity and missing annotations.
+- [`labsync/`](labsync/): landing page for LabSync, a lab practicum app (location and QR attendance, leave requests, locked quizzes, live recap, grades, audit log). Astro, with APK downloads from this repo's `labsync-v*` releases.
 
 ## Research
 

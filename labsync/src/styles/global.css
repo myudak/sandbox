@@ -1,0 +1,153 @@
+/* LabSync "poster" palette, same tokens as the app (src/global.css in the app repo). */
+:root {
+  --sage: #d3e1d8;
+  --sage-deep: #9cc4ae;
+  --cream: #f8f5ee;
+  --paper: #fffdf8;
+  --ink: #1e1e1e;
+  --ink-raised: #2e2e2e;
+  --ink-fg: #f6f2e9;
+  --ink-muted: #a8a49b;
+  --muted: #66645c;
+  --line: rgb(27 27 27 / 0.1);
+  --violet: #6b66f0;
+  --violet-soft: #dddcfc;
+  --violet-ink: #3b36b8;
+  --coral: #f2684d;
+  --mustard: #f5c443;
+  --aqua: #a6e4ef;
+  --success: #2e9e6e;
+
+  --display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'Space Mono', ui-monospace, monospace;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  --max: 1240px;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--sage);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  overflow-x: clip;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--max) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 56px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 17px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--ink-fg);
+  padding: 6px 6px 6px 26px;
+}
+.btn-primary:hover {
+  background: var(--ink-raised);
+}
+.btn-primary .dot {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--coral);
+  color: var(--ink);
+}
+.btn-ghost {
+  padding: 0 24px;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+}
+.btn-ghost:hover {
+  background: rgb(27 27 27 / 0.06);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
